@@ -1,3 +1,9 @@
+PS1='$ '
+PS2='> '
+PS3='#? '
+PS4='+ '
+export PS1 PS2 PS3 PS4
+
 set -o emacs
 
 umask 022
@@ -23,22 +29,37 @@ alias r="fc -e -"
 alias fixperms="chmod -R go-rwx $HOME/.ssh $HOME/mail"
 
 UNAME=`uname 2> /dev/null`
-
 if [ "$UNAME" = "windows32" ]
 then
+	alias find=gfind
+	alias sort=gsort
 	alias open=start
 	alias ps=tasklist
-	alias sort=gsort
-	alias find=gfind
+	alias vi=vim
 fi
+unset UNAME
 
 if ! echo "$SHELL" | grep -q ksh
 then
-	alias whence="whereis -qb"
+	if whereis whereis > /dev/null 2>&1
+	then
+		alias whence="whereis -qb"
+	fi
 fi
 
 if [ "`hostname 2> /dev/null`" = "sdf" ]
 then
 	alias git="$HOME/pkg/git/bin/git --exec-path=$HOME/pkg/git/libexec/git-core"
 fi
+
+FORTUNES="/usr/pkg/games/fortune /usr/games/fortune"
+for i in `echo $FORTUNES`
+do
+	if [ -x $i ]
+	then
+		$i
+		break
+	fi
+done
+unset i FORTUNES
 

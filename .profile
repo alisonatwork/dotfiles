@@ -1,16 +1,24 @@
 EDITOR=vi
 VISUAL=vi
-PAGER=more
-export EDITOR VISUAL PAGER
+export EDITOR VISUAL
+
+if [ -x /usr/bin/more ]
+then
+    PAGER=more
+else
+    PAGER=less
+fi
+export PAGER
 
 TERM=xterm
 export TERM
 
 if [ -d "$HOME/bin" ]
 then
-	if ! echo "$PATH" | egrep -q "$HOME[/\\]bin"
+	if ! echo "$PATH" | egrep -q "^$HOME[/\\]bin"
 	then
-		PATH="$PATH:$HOME/bin"
+        PATH="$HOME/bin:`echo $PATH | sed \"s|$HOME[/\\]bin:||\"`"
+        export PATH
 	fi
 fi
 
@@ -31,15 +39,4 @@ then
 	ENV="$HOME/.shrc"
 	export ENV
 fi
-
-FORTUNES="/usr/pkg/games/fortune /usr/games/fortune"
-for i in `echo $FORTUNES`
-do
-	if [ -x $i ]
-	then
-		$i
-		break
-	fi
-done
-unset i FORTUNES
 
