@@ -5,20 +5,20 @@ umask 022
 unalias -a
 
 # FreeBSD defaults
-alias h='fc -l'
+alias h="fc -l"
 alias j=jobs
-alias m=$PAGER
-alias ll='ls -laFo'
-alias l='ls -l'
-alias g='egrep -i'
+alias m="$PAGER"
+alias ll="ls -laFo"
+alias l="ls -l"
+alias g="egrep -i"
 
 # mine
-alias ali='. $ENV'
-alias cdup='cd ..'
+alias ali=". $ENV"
+alias cdup="cd .."
 alias cls=clear
 alias dir=ls
-alias lk='ls -l | grep ^d'
-alias r='fc -e -'
+alias lk="ls -l | grep ^d"
+alias r="fc -e -"
 
 UNAME=`uname 2> /dev/null`
 
@@ -28,9 +28,11 @@ then
 	alias ps=tasklist
 	alias sort=gsort
 	alias find=gfind
-elif [ "$UNAME" = "Linux" ]
+fi
+
+if ! echo "$SHELL" | grep ksh
 then
-	alias whence=whereis
+	alias whence="whereis -qb"
 fi
 
 if [ "`hostname 2> /dev/null`" = "sdf" ]

@@ -18,7 +18,11 @@ if [ "`hostname 2> /dev/null`" = "sdf" ]
 then
 	MAIL=/mail/${LOGNAME:?}
 	export MAIL
-	sign=`cat ~/.signature`
+fi
+
+if [ -f "$HOME/.signature" ]
+then
+	sign=`cat "$HOME/.signature"`
 	export sign
 fi
 
@@ -37,4 +41,5 @@ do
 		break
 	fi
 done
+unset FORTUNES
 
