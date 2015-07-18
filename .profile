@@ -41,5 +41,5 @@ do
 		break
 	fi
 done
-unset FORTUNES
+unset i FORTUNES
 
