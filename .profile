@@ -12,11 +12,17 @@ export PAGER
 
 if [ -d "$HOME/bin" ]
 then
-	if ! echo "$PATH" | egrep -q "^$HOME[/\\]bin"
-	then
-		PATH="$HOME/bin:`echo $PATH | sed \"s|:$HOME[/\\]bin||g\"`"
-		export PATH
-	fi
+	case "$PATH" in
+		$HOME/bin:*|$HOME\\bin:*)
+		;;
+		*:$HOME/bin*|*:$HOME\\bin*)
+			PATH="$HOME/bin:`echo $PATH | sed \"s|:$HOME[/\\]bin||g\"`"
+		;;
+		*)
+			PATH="$HOME/bin:$PATH"
+		;;
+	esac
+	export PATH
 fi
 
 if [ -f "$HOME/.signature" ]
