@@ -4,9 +4,9 @@ then
 	then
 		source "$ENV"
 	else
-		echo "Circular ENV" 2>&1
+		echo "Circular ENV" 1>&2
 	fi
 else
-	echo "Can't find ENV" 2>&1
+	echo "Can't find ENV" 1>&2
 fi
 
