@@ -33,7 +33,7 @@ fi
 
 case "`uname 2> /dev/null`" in
 	windows32)
-		TERM=Cygwin
+		TERM=cygwin
 	;;
 	*)
 		TERM=xterm

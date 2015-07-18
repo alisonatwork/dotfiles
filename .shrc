@@ -4,45 +4,47 @@ umask 022
 
 unalias -a
 
-# FreeBSD defaults
-alias h="fc -l"
-alias j=jobs
-alias m="$PAGER"
-alias ll="ls -laFo"
-alias l="ls -l"
-alias g="egrep -i"
-
-# mine
 alias ali=". $ENV"
+alias cd..="cd .."
 alias cdup="cd .."
 alias cls=clear
 alias dir=ls
+alias h="fc -l"
+alias j=jobs
+alias l="$PAGER"
 alias lk="ls -l | grep ^d"
+alias ll="ls -l"
 alias r="fc -e -"
 
 alias fixperms="chmod -R go-rwx $HOME/.ssh $HOME/mail"
 
-UNAME=`uname 2> /dev/null`
-if [ "$UNAME" = "windows32" ]
-then
-	alias find=gfind
-	alias sort=gsort
-	alias open=start
-	alias ps=tasklist
-	alias vi=vim
-fi
-unset UNAME
+case "$SHELL" in
+	*ksh*)
+	;;
+	*)
+		if whereis -qb whereis > /dev/null 2>&1
+		then
+			alias whence="whereis -qb"
+		fi
+	;;
+esac
 
-if ! echo "$SHELL" | grep -q ksh
-then
-	if whereis whereis > /dev/null 2>&1
-	then
-		alias whence="whereis -qb"
-	fi
-fi
+case "`uname 2> /dev/null`" in
+	windows32)
+		alias find=gfind
+		alias sort=gsort
+		alias ps=tasklist
+		alias vi=vim
+	;;
+	*)
+	;;
+esac
 
-if [ "`hostname 2> /dev/null`" = "sdf" ]
-then
-	alias git="$HOME/pkg/git/bin/git --exec-path=$HOME/pkg/git/libexec/git-core"
-fi
+case "`hostname 2> /dev/null`" in
+	sdf)
+		alias git="$HOME/pkg/git/bin/git --exec-path=$HOME/pkg/git/libexec/git-core"
+	;;
+	*)
+	;;
+esac
 
