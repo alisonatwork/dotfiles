@@ -4,9 +4,9 @@ export EDITOR VISUAL
 
 if [ -x /usr/bin/more ]
 then
-    PAGER=more
+	PAGER=more
 else
-    PAGER=less
+	PAGER=less
 fi
 export PAGER
 
@@ -14,8 +14,8 @@ if [ -d "$HOME/bin" ]
 then
 	if ! echo "$PATH" | egrep -q "^$HOME[/\\]bin"
 	then
-        PATH="$HOME/bin:`echo $PATH | sed \"s|:$HOME[/\\]bin||g\"`"
-        export PATH
+		PATH="$HOME/bin:`echo $PATH | sed \"s|:$HOME[/\\]bin||g\"`"
+		export PATH
 	fi
 fi
 
