@@ -1,6 +1,3 @@
 set append ask crt dot hold
-set el-completion-keys=^I
-set el-editor=emacs
-set el-history-size
 set folder=mail
 set record=~/mail/sent-mail
