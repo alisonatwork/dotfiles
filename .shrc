@@ -20,6 +20,8 @@ alias dir=ls
 alias lk="ls -l | grep ^d"
 alias r="fc -e -"
 
+alias fixperms="chmod -R go-rwx $HOME/.ssh $HOME/mail"
+
 UNAME=`uname 2> /dev/null`
 
 if [ "$UNAME" = "windows32" ]
@@ -30,7 +32,7 @@ then
 	alias find=gfind
 fi
 
-if ! echo "$SHELL" | grep ksh
+if ! echo "$SHELL" | grep -q ksh
 then
 	alias whence="whereis -qb"
 fi
@@ -39,3 +41,4 @@ if [ "`hostname 2> /dev/null`" = "sdf" ]
 then
 	alias git="$HOME/pkg/git/bin/git --exec-path=$HOME/pkg/git/libexec/git-core"
 fi
+
