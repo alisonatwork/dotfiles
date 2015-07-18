@@ -42,7 +42,7 @@ esac
 
 case "`hostname 2> /dev/null`" in
 	sdf)
-		alias git="$HOME/pkg/git/bin/git --exec-path=$HOME/pkg/git/libexec/git-core"
+		alias git="git --exec-path=$HOME/pkg/git/libexec/git-core"
 	;;
 	*)
 	;;

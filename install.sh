@@ -23,10 +23,13 @@ then
 	HOME="$USERPROFILE"
 fi
 
-if ! echo $0 | egrep -q ^./
-then
-	cd `dirname $0`
-fi
+case "$0" in
+	./install.sh)
+	;;
+	*)
+		cd `dirname $0` 2> /dev/null
+	;;
+esac
 
 for i in .[a-z]*
 do
@@ -36,7 +39,7 @@ do
 	fi
 	if [ -f "$HOME/$i" ]
 	then
-		if diff -q $HOME/$i $i > /dev/null
+		if diff -q "$HOME/$i" "$i" > /dev/null
 		then
 			continue
 		fi
@@ -53,18 +56,18 @@ do
 				;;
 			esac
 		else
-			$DRY_RUN mv $HOME/$i $HOME/$i.orig
+			$DRY_RUN mv "$HOME/$i" "$HOME/$i.orig"
 		fi
 	fi
-	$DRY_RUN cp $i $HOME/$i
+	$DRY_RUN cp "$i" "$HOME/$i"
 done
 
 makeDir() {
 	if [ ! -d "$HOME/$1" ]
 	then
 		$DRY_RUN mkdir "$HOME/$1"
+		$DRY_RUN chmod $2 "$HOME/$1"
 	fi
-	$DRY_RUN chmod $2 "$HOME/$1"
 }
 
 for i in .ssh mail
