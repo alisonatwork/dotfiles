@@ -1,5 +1,7 @@
 set -o emacs
 
+umask 022
+
 unalias -a
 
 # FreeBSD defaults
