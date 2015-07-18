@@ -59,3 +59,21 @@ do
 	$DRY_RUN cp $i $HOME/$i
 done
 
+makeDir() {
+	if [ ! -d "$HOME/$1" ]
+	then
+		$DRY_RUN mkdir "$HOME/$1"
+	fi
+	$DRY_RUN chmod $2 "$HOME/$1"
+}
+
+for i in .ssh mail
+do
+	makeDir $i 700
+done
+
+for i in bin git src tmp
+do
+	makeDir $i 755
+done
+
