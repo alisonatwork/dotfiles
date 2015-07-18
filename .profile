@@ -58,8 +58,7 @@ case "$-" in
 		PS4='+ '
 		export PS1 PS2 PS3 PS4
 
-		FORTUNES="/usr/pkg/games/fortune /usr/games/fortune"
-		for i in `echo $FORTUNES`
+		for i in /usr/pkg/games/fortune /usr/games/fortune
 		do
 			if [ -x $i ]
 			then
@@ -67,7 +66,7 @@ case "$-" in
 				break
 			fi
 		done
-		unset i FORTUNES
+		unset i
 	;;
 	*)
 	;;
