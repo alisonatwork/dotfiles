@@ -77,3 +77,10 @@ do
 	makeDir $i 755
 done
 
+if git --version > /dev/null
+then
+	$DRY_RUN git config --global push.default simple
+	$DRY_RUN git config --global pull.rebase true
+	$DRY_RUN git config --global color.ui false
+fi
+
