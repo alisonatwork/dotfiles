@@ -1,0 +1,37 @@
+set -o emacs
+
+unalias -a
+
+# FreeBSD defaults
+alias h='fc -l'
+alias j=jobs
+alias m=$PAGER
+alias ll='ls -laFo'
+alias l='ls -l'
+alias g='egrep -i'
+
+# mine
+alias ali='. $ENV'
+alias cdup='cd ..'
+alias cls=clear
+alias dir=ls
+alias lk='ls -l | grep ^d'
+alias r='fc -e -'
+
+UNAME=`uname 2> /dev/null`
+
+if [ "$UNAME" = "windows32" ]
+then
+	alias open=start
+	alias ps=tasklist
+	alias sort=gsort
+	alias find=gfind
+elif [ "$UNAME" = "Linux" ]
+then
+	alias whence=whereis
+fi
+
+if [ "`hostname 2> /dev/null`" = "sdf" ]
+then
+	alias git=$HOME/pkg/git/bin/git
+fi
