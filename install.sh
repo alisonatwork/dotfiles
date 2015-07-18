@@ -30,9 +30,13 @@ fi
 
 for i in .[a-z]*
 do
+	if [ -d "$i" ]
+	then
+		continue
+	fi
 	if [ -f "$HOME/$i" ]
 	then
-		if diff -q $HOME/$i $i
+		if diff -q $HOME/$i $i > /dev/null
 		then
 			continue
 		fi
