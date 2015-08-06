@@ -32,6 +32,7 @@ esac
 case "`uname 2> /dev/null`" in
 	windows32)
 		alias find=gfind
+		alias ifconfig=ipconfig
 		alias sort=gsort
 		alias ps=tasklist
 		alias vi=vim
