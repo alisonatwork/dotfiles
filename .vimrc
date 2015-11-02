@@ -1,6 +1,6 @@
 set ai nu smd sw=4 ts=4
 
-call pathogen#infect()
+silent! call pathogen#infect()
 syntax on
 filetype plugin indent on
 
