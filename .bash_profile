@@ -10,6 +10,10 @@ fi
 
 if [ -n "$HOME" ]
 then
+	if [ "$HOME" != "$PWD" ]
+	then
+		cd $HOME
+	fi
 	if [ -f "$HOME/.profile" ]
 	then
 		source "$HOME/.profile"
