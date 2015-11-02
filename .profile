@@ -41,6 +41,9 @@ case "`uname 2> /dev/null`" in
 	windows32)
 		TERM=cygwin
 	;;
+	MINGW*)
+		TERM=xterm-256color
+	;;
 	*)
 		TERM=xterm
 	;;
