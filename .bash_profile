@@ -12,7 +12,7 @@ if [ -n "$HOME" ]
 then
 	if [ "$HOME" != "$PWD" ]
 	then
-		cd $HOME
+		cd "$HOME"
 	fi
 	if [ -f "$HOME/.profile" ]
 	then
