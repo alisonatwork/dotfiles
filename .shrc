@@ -37,6 +37,9 @@ case "`uname 2> /dev/null`" in
 		alias ps=tasklist
 		alias vi=vim
 	;;
+	MINGW*)
+		alias ifconfig=ipconfig
+	;;
 	*)
 	;;
 esac
