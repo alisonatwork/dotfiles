@@ -4,19 +4,19 @@ umask 022
 
 unalias -a
 
-alias ali=". $ENV"
+alias ali='. "$ENV"'
 alias cd..="cd .."
 alias cdup="cd .."
 alias cls=clear
 alias dir=ls
 alias h="fc -l"
 alias j=jobs
-alias l="$PAGER"
+alias l='$PAGER'
 alias lk="ls -l | grep ^d"
 alias ll="ls -l"
 alias r="fc -e -"
 
-alias fixperms="chmod -R go-rwx $HOME/.ssh $HOME/mail"
+alias fixperms='chmod -R go-rwx "$HOME/.ssh" "$HOME/mail"'
 
 case "$SHELL" in
 	*ksh*)
