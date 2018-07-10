@@ -6,7 +6,7 @@ if [ -x /usr/bin/more ]
 then
 	PAGER=more
 else
-	PAGER=less
+	PAGER="less -X"
 fi
 export PAGER
 
