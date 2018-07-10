@@ -16,3 +16,5 @@ if has('gui_running')
   colorscheme desert
 endif
 
+set t_ti= t_te=
+
