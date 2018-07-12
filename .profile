@@ -7,7 +7,7 @@ then
 	PAGER=more
 else
 	PAGER=less
-	LESS="-X -R"
+	LESS="-X -R -F"
 	export LESS
 fi
 export PAGER
