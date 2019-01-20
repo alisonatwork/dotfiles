@@ -87,6 +87,20 @@ do
 	installDir 755 "$HOME/$i"
 done
 
+if [ -d "$APPDATA" ]
+then
+    cd appdata
+    for i in Code/User
+    do
+        installDir 755 "$APPDATA/Code/User"
+        for j in $i/*
+        do
+            installFile "$j" "$APPDATA/$j"
+        done
+    done
+    cd ..
+fi
+
 if git --version > /dev/null 2>&1
 then
 	$DRY_RUN git config --global push.default simple
