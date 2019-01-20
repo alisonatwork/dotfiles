@@ -31,7 +31,11 @@ esac
 
 case "`uname 2> /dev/null`" in
 	MINGW*)
-		alias ifconfig=ipconfig
+		alias ifconfig="winpty ipconfig"
+		alias node="winpty node"
+		alias npm="winpty npm.cmd"
+		alias ping="winpty ping"
+		alias traceroute="winpty tracert"
 	;;
 	*)
 	;;
