@@ -6,6 +6,7 @@ filetype plugin indent on
 set backspace=indent,eol,start
 set clipboard=
 set expandtab
+set noincsearch
 set ruler
 set showcmd
 
