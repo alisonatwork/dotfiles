@@ -1,14 +1,8 @@
 [
     {
-        "key": "shift+oem_3",
-        "command": "type",
-        "args": { "text": "~" },
-        "when": "amVim.mode != 'INSERT'"
-    },
-    {
         "key": "oem_3",
         "command": "type",
-        "args": { "text": "`" },
+        "args": { "text": "~" },
         "when": "amVim.mode != 'INSERT'"
     },
     {
