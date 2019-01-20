@@ -1,0 +1,20 @@
+[
+    {
+        "key": "shift+oem_3",
+        "command": "type",
+        "args": { "text": "~" },
+        "when": "amVim.mode != 'INSERT'"
+    },
+    {
+        "key": "oem_3",
+        "command": "type",
+        "args": { "text": "`" },
+        "when": "amVim.mode != 'INSERT'"
+    },
+    {
+        "key": "shift+oem_2",
+        "command": "type",
+        "args": { "text": "/" },
+        "when": "amVim.mode != 'INSERT'"
+    }
+]

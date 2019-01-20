@@ -1,0 +1,15 @@
+{
+    "editor.dragAndDrop": false,
+    "editor.folding": false,
+    "editor.wordWrap": "wordWrapColumn",
+    "editor.wordWrapColumn": 132,
+    "editor.wrappingIndent": "none",
+
+    "window.menuBarVisibility": "toggle",
+
+    "terminal.integrated.copyOnSelection": true,
+    "terminal.integrated.cursorBlinking": true,
+    "terminal.integrated.cursorStyle": "underline",
+
+    "amVim.bindCtrlCommands": false
+}
