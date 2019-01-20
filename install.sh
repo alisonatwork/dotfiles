@@ -89,17 +89,28 @@ done
 
 if [ -d "$APPDATA" ]
 then
-    cd appdata
-    for i in Code/User
-    do
-        installDir 755 "$APPDATA/Code/User"
-        for j in $i/*
-        do
-            installFile "$j" "$APPDATA/$j"
-        done
-    done
-    cd ..
+	cd appdata
+	for i in Code/User
+	do
+		installDir 755 "$APPDATA/Code/User"
+		for j in $i/*
+		do
+			installFile "$j" "$APPDATA/$j"
+		done
+	done
+	cd ..
 fi
+
+case "`uname 2> /dev/null`" in
+	MINGW*)
+		if [ ! -x "$HOME/bin/dc" ]
+		then
+			$DRY_RUN unzip apps/bc-1.06-2-bin.zip bin/bc.exe bin/dc.exe -d "$HOME"
+		fi
+	;;
+	*)
+	;;
+esac
 
 if git --version > /dev/null 2>&1
 then
