@@ -31,36 +31,34 @@ case "$0" in
 	;;
 esac
 
-for i in .[a-z]*
-do
-	if [ -d "$i" ]
+installFile() {
+	src="$1"
+	dest="$2"
+	if [ -f "$dest" ]
 	then
-		continue
-	fi
-	if [ -f "$HOME/$i" ]
-	then
-		if diff -q "$HOME/$i" "$i" > /dev/null
+		if diff -q "$dest" "$src" > /dev/null
 		then
-			continue
+			return
 		fi
-		if [ -f "$HOME/$i.orig" ]
+		if [ -f "$dest.orig" ]
 		then
-			echo "Overwrite $HOME/$i? (y/N)"
+			echo "Overwrite $dest? (y/N)"
 			read response
 			case "$response" in
 				y|Y)
 				;;
 				*)
-					echo "Skipping $HOME/$i..."
+					echo "Skipping $dest..."
 					continue
 				;;
 			esac
 		else
-			$DRY_RUN mv "$HOME/$i" "$HOME/$i.orig"
+			$DRY_RUN mv "$dest" "$dest.orig"
 		fi
 	fi
-	$DRY_RUN cp "$i" "$HOME/$i"
-done
+	$DRY_RUN cp "$src" "$dest"
+	unset src dest
+}
 
 makeDir() {
 	if [ ! -d "$HOME/$1" ]
@@ -69,6 +67,15 @@ makeDir() {
 		$DRY_RUN chmod $2 "$HOME/$1"
 	fi
 }
+
+for i in .[a-z]*
+do
+	if [ -d $i ]
+	then
+		continue
+	fi
+	installFile "$i" "$HOME/$i"
+done
 
 for i in .ssh mail
 do
