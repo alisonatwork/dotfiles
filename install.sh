@@ -60,11 +60,11 @@ installFile() {
 	unset src dest
 }
 
-makeDir() {
-	if [ ! -d "$HOME/$1" ]
+installDir() {
+	if [ ! -d "$2" ]
 	then
-		$DRY_RUN mkdir "$HOME/$1"
-		$DRY_RUN chmod $2 "$HOME/$1"
+		$DRY_RUN mkdir -p "$2"
+		$DRY_RUN chmod $1 "$2"
 	fi
 }
 
@@ -79,12 +79,12 @@ done
 
 for i in .ssh mail
 do
-	makeDir $i 700
+	installDir 700 "$HOME/$i"
 done
 
 for i in bin git src tmp
 do
-	makeDir $i 755
+	installDir 755 "$HOME/$i"
 done
 
 if git --version > /dev/null 2>&1
