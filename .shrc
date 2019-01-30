@@ -34,6 +34,7 @@ case "`uname 2> /dev/null`" in
 	MINGW*)
 		alias bc="winpty bc"
 		alias dc="winpty dc"
+		alias gradlew="winpty ./gradlew.bat"
 		alias ifconfig="winpty ipconfig"
 		alias node="winpty node"
 		alias npm="winpty npm.cmd"
