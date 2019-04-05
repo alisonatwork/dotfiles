@@ -105,7 +105,7 @@ case "`uname 2> /dev/null`" in
 	MINGW*)
 		if [ ! -x "$HOME/bin/dc" ]
 		then
-			$DRY_RUN unzip apps/bc-1.06-2-bin.zip bin/dc.exe -d "$HOME"
+			$DRY_RUN cp apps/bc/dc.exe "$HOME/bin"
 		fi
 	;;
 	*)
