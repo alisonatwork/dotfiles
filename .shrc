@@ -26,7 +26,13 @@ cedict() {
 		echo "Dictionary not found: getcedict first!" 1>&2
 		return
 	fi
-	egrep "^[^ ]+ $1 " "$HOME/tmp/cedict_ts.u8" | cut -d\  -f2-
+	numberToMark=cat
+	if command -v node > /dev/null && test -x $HOME/bin/pinyin.js
+	then
+		numberToMark="$HOME/bin/pinyin.js"
+	fi
+	egrep "^[^ ]+ $1 " "$HOME/tmp/cedict_ts.u8" | cut -d\  -f2- | $numberToMark
+	unset numberToMark
 }
 
 case "$SHELL" in

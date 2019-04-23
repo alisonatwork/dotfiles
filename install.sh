@@ -101,6 +101,7 @@ then
 	cd ..
 fi
 
+installFile apps/pinyin/pinyin.js "$HOME/bin/pinyin.js"
 case "`uname 2> /dev/null`" in
 	MINGW*)
 		installFile apps/bc/dc.exe "$HOME/bin/dc.exe"
