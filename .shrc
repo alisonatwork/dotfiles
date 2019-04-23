@@ -16,7 +16,7 @@ alias lk="ls -l | grep ^d"
 alias ll="ls -l"
 alias r="fc -e -"
 
-alias getfortunes='curl -o $HOME/tmp/fortunes https://raw.githubusercontent.com/openbsd/src/master/games/fortune/datfiles/fortunes2 && grep '^%$' $HOME/tmp/fortunes | wc -l > $HOME/tmp/fortunes.count'
+alias getfortunes='curl -o "$HOME/tmp/fortunes" https://raw.githubusercontent.com/openbsd/src/master/games/fortune/datfiles/fortunes2 && grep '^%$' "$HOME/tmp/fortunes" | wc -l > "$HOME/tmp/fortunes.count"'
 alias fixperms='chmod -R go-rwx "$HOME/.ssh" "$HOME/mail"'
 
 case "$SHELL" in
