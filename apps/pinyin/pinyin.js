@@ -24,6 +24,7 @@ const MARK_LOOKUP = {
 
 function numberToMark(match, vowels, p2, suffix, tone) {
   const newvowels = vowels.replace(/(v|u:)/g, 'ü').replace(/(V|U:)/g, 'Ü');
+  if (tone === '5') return newvowels + suffix;
   const vowel = (newvowels.length == 1 || /[aeo]/gi.test(newvowels[0])) ? newvowels[0] : newvowels[1];
   return newvowels.replace(vowel, MARK_LOOKUP[vowel][tone - 1]) + suffix;
 }
@@ -39,6 +40,6 @@ const rl = readline.createInterface({
   output: process.stdout
 });
 rl.on('line', (input) => {
-  process.stdout.write(input.replace(/(([aeiouüv]|[uU]:){1,3})(n?g?r?)([1234])/gi, MODES[mode]));
+  process.stdout.write(input.replace(/(([aeiouüv]|[uU]:){1,3})(n?g?r?)([12345])/gi, MODES[mode]));
   process.stdout.write(EOL);
 });
