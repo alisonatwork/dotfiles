@@ -26,6 +26,12 @@ cedict() {
 		echo "Dictionary not found: getcedict first!" 1>&2
 		return
 	fi
+	if [ "$1" = "-m" -a -n "$2" ]
+	then
+		cedict `echo $2 | sed 's/./& /g'`
+		shift
+		shift
+	fi
 	numberToMark=cat
 	if command -v node > /dev/null && test -x $HOME/bin/pinyin.js
 	then
