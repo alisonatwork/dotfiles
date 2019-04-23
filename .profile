@@ -12,6 +12,12 @@ else
 fi
 export PAGER
 
+if [ -z "$LANG" ]
+then
+	LANG="en_US.UTF-8"
+	export LANG
+fi
+
 if [ -d "$HOME/bin" ]
 then
 	case "$PATH" in
