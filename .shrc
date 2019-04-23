@@ -16,8 +16,22 @@ alias lk="ls -l | grep ^d"
 alias ll="ls -l"
 alias r="fc -e -"
 
+getcedict='curl -o "$HOME/tmp/cedict_1_0_ts_utf-8_mdbg.zip" https://www.mdbg.net/chinese/export/cedict/cedict_1_0_ts_utf-8_mdbg.zip && unzip "$HOME/tmp/cedict_1_0_ts_utf-8_mdbg.zip" -d "$HOME/tmp"'
 alias getfortunes='curl -o "$HOME/tmp/fortunes" https://raw.githubusercontent.com/openbsd/src/master/games/fortune/datfiles/fortunes2 && grep '^%$' "$HOME/tmp/fortunes" | wc -l > "$HOME/tmp/fortunes.count"'
 alias fixperms='chmod -R go-rwx "$HOME/.ssh" "$HOME/mail"'
+
+cedict() {
+	if [ ! -f "$HOME/tmp/cedict_ts.u8" ]
+	then
+		echo "Dictionary not found: getcedict first!" 1>&2
+		return
+	fi
+	if [ -z "$1" ]
+	then
+		return
+	fi
+	egrep "^[^ ]+ $1 " "$HOME/tmp/cedict_ts.u8" | cut -d\  -f2-
+}
 
 case "$SHELL" in
 	*ksh*)
