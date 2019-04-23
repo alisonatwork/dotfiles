@@ -103,10 +103,7 @@ fi
 
 case "`uname 2> /dev/null`" in
 	MINGW*)
-		if [ ! -x "$HOME/bin/dc" ]
-		then
-			$DRY_RUN cp apps/bc/dc.exe "$HOME/bin"
-		fi
+		installFile apps/bc/dc.exe "$HOME/bin/dc.exe"
 	;;
 	*)
 	;;
