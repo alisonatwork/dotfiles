@@ -42,6 +42,10 @@ case "$SHELL" in
 		if whereis -qb whereis > /dev/null 2>&1
 		then
 			alias whence="whereis -qb"
+		else
+			whence() {
+				command -v $1 | grep ^/
+			}
 		fi
 	;;
 esac
