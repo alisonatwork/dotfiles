@@ -72,15 +72,12 @@ case "$-" in
 		PS4='+ '
 		export PS1 PS2 PS3 PS4
 
-		if [ -x /usr/pkg/games/fortune ]
+		if [ -x "`command -v fortune`" ]
 		then
-			/usr/pkg/games/fortune
-		elif [ -x /usr/games/fortune ]
+			`command -v fortune`
+		elif [ -f "$HOME/tmp/fortunes" -a -f "$HOME/tmp/fortunes.count" ]
 		then
-			/usr/games/fortune
-		elif [ -f $HOME/tmp/fortunes -a -f $HOME/tmp/fortunes.count ]
-		then
-			awk 'BEGIN { srand(); x=int(rand() * '`cat $HOME/tmp/fortunes.count`') } /^%$/ { x--;next } x==0' $HOME/tmp/fortunes
+			awk 'BEGIN { srand(); x=int(rand() * '`cat "$HOME/tmp/fortunes.count"`') } /^%$/ { x--;next } x==0' "$HOME/tmp/fortunes"
 		fi
 	;;
 	*)
