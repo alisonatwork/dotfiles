@@ -45,6 +45,18 @@ cedict() {
 	unset numberToMark
 }
 
+if [ ! -x "`command -v fortune`" ]
+then
+	fortune() {
+		if [ ! -f "$HOME/tmp/fortunes" -o ! -f "$HOME/tmp/fortunes.count" ]
+		then
+			echo "Fortune not found: getfortunes first!" 1>&2
+			return
+		fi
+		awk 'BEGIN { srand(); x=int(rand() * '`cat "$HOME/tmp/fortunes.count"`') } /^%$/ { x--;next } x==0' "$HOME/tmp/fortunes"
+	}
+fi
+
 case "$SHELL" in
 	*ksh*)
 	;;
