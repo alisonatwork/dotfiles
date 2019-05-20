@@ -31,6 +31,8 @@ case "$0" in
 	;;
 esac
 
+UNAME=`uname 2> /dev/null`
+
 installFile() {
 	src="$1"
 	dest="$2"
@@ -87,12 +89,17 @@ do
 	installDir 755 "$HOME/$i"
 done
 
+if [ "$UNAME" = "Darwin" -a -z "$APPDATA" ]
+then
+	APPDATA="$HOME/Library/Application Support"
+fi
+
 if [ -d "$APPDATA" ]
 then
 	cd appdata
 	for i in Code/User
 	do
-		installDir 755 "$APPDATA/Code/User"
+		installDir 755 "$APPDATA/$i"
 		for j in $i/*
 		do
 			installFile "$j" "$APPDATA/$j"
@@ -102,7 +109,7 @@ then
 fi
 
 installFile apps/pinyin/pinyin.js "$HOME/bin/pinyin.js"
-case "`uname 2> /dev/null`" in
+case "$UNAME" in
 	MINGW*)
 		installFile apps/bc/dc.exe "$HOME/bin/dc.exe"
 	;;
