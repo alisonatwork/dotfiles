@@ -2,13 +2,13 @@ EDITOR=vi
 VISUAL=vi
 export EDITOR VISUAL
 
-if [ -x /usr/bin/more ]
+if [ -x `command -v less` ]
 then
-	PAGER=more
-else
 	PAGER=less
 	LESS="-X -R -F"
 	export LESS
+else
+	PAGER=more
 fi
 export PAGER
 
