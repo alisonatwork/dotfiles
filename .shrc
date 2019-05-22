@@ -82,6 +82,15 @@ case "`uname 2> /dev/null`" in
 		alias ping="winpty ping"
 		alias traceroute="winpty tracert"
 	;;
+	Darwin)
+		case "$SHELL" in
+			*bash*)
+				[ -r /Library/Developer/CommandLineTools/usr/share/git-core/git-completion.bash ] && . /Library/Developer/CommandLineTools/usr/share/git-core/git-completion.bash
+			;;
+			*)
+			;;
+		esac
+	;;
 	*)
 	;;
 esac
