@@ -46,7 +46,7 @@ then
 fi
 
 case "`uname 2> /dev/null`" in
-	MINGW*)
+	MINGW*|Darwin)
 		TERM=xterm-256color
 	;;
 	*)
