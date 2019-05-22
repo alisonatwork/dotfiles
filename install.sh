@@ -121,6 +121,5 @@ if git --version > /dev/null 2>&1
 then
 	$DRY_RUN git config --global push.default simple
 	$DRY_RUN git config --global pull.rebase true
-	$DRY_RUN git config --global color.ui false
 fi
 
