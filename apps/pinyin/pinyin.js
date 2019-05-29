@@ -36,8 +36,7 @@ if (!MODES[mode]) {
 }
 
 const rl = readline.createInterface({
-  input: process.stdin,
-  output: process.stdout
+  input: process.stdin
 });
 rl.on('line', (input) => {
   process.stdout.write(input.replace(/(([aeiouüv]|[uU]:){1,3})(n?g?r?)([12345])/gi, MODES[mode]));
