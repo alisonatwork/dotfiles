@@ -83,6 +83,7 @@ case "`uname 2> /dev/null`" in
 		alias traceroute="winpty tracert"
 	;;
 	Darwin)
+		alias start="open"
 		case "$SHELL" in
 			*bash*)
 				[ -r /Library/Developer/CommandLineTools/usr/share/git-core/git-completion.bash ] && . /Library/Developer/CommandLineTools/usr/share/git-core/git-completion.bash
