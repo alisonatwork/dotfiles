@@ -20,6 +20,6 @@ endif
 set t_ti= t_te=
 
 autocmd BufNewFile,BufRead .shrc set filetype=sh
-autocmd FileType make,sh set noexpandtab
+autocmd FileType go,make,sh set noexpandtab
 autocmd FileType js,json set sw=2 ts=2
 
