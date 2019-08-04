@@ -16,37 +16,40 @@ alias lk="ls -l | grep ^d"
 alias ll="ls -l"
 alias r="fc -e -"
 
-alias getcedict='curl -o "$HOME/tmp/cedict_1_0_ts_utf-8_mdbg.zip" https://www.mdbg.net/chinese/export/cedict/cedict_1_0_ts_utf-8_mdbg.zip && unzip "$HOME/tmp/cedict_1_0_ts_utf-8_mdbg.zip" -d "$HOME/tmp"'
-alias getfortunes='curl -o "$HOME/tmp/fortunes" https://raw.githubusercontent.com/openbsd/src/master/games/fortune/datfiles/fortunes2 && grep '^%$' "$HOME/tmp/fortunes" | wc -l > "$HOME/tmp/fortunes.count"'
 alias fixperms='chmod -R go-rwx "$HOME/.ssh" "$HOME/mail"'
 
-cedict() {
-	if [ ! -f "$HOME/tmp/cedict_ts.u8" ]
-	then
-		echo "Dictionary not found: getcedict first!" 1>&2
-		return
-	fi
-	if [ "$1" = "-m" -a -n "$2" ]
-	then
-		cedict `echo $2 | sed 's/./& /g'`
-		shift
-		shift
-	fi
-	numberToMark=cat
-	if command -v node > /dev/null && test -x $HOME/bin/pinyin.js
-	then
-		numberToMark="$HOME/bin/pinyin.js"
-	fi
-	while [ -n "$1" ]
-	do
-		egrep "^[^ ]+ $1 " "$HOME/tmp/cedict_ts.u8" | cut -d\  -f2- | $numberToMark
-		shift
-	done
-	unset numberToMark
-}
+if [ ! -x "`command -v cedict`" ]
+then
+	alias getcedict='curl -o "$HOME/tmp/cedict_1_0_ts_utf-8_mdbg.zip" https://www.mdbg.net/chinese/export/cedict/cedict_1_0_ts_utf-8_mdbg.zip && unzip "$HOME/tmp/cedict_1_0_ts_utf-8_mdbg.zip" -d "$HOME/tmp"'
+	cedict() {
+		if [ ! -f "$HOME/tmp/cedict_ts.u8" ]
+		then
+			echo "Dictionary not found: getcedict first!" 1>&2
+			return
+		fi
+		if [ "$1" = "-m" -a -n "$2" ]
+		then
+			cedict `echo $2 | sed 's/./& /g'`
+			shift
+			shift
+		fi
+		numberToMark=cat
+		if command -v node > /dev/null && test -x $HOME/bin/pinyin.js
+		then
+			numberToMark="$HOME/bin/pinyin.js"
+		fi
+		while [ -n "$1" ]
+		do
+			egrep "^[^ ]+ $1 " "$HOME/tmp/cedict_ts.u8" | cut -d\  -f2- | $numberToMark
+			shift
+		done
+		unset numberToMark
+	}
+fi
 
 if [ ! -x "`command -v fortune`" ]
 then
+	alias getfortunes='curl -o "$HOME/tmp/fortunes" https://raw.githubusercontent.com/openbsd/src/master/games/fortune/datfiles/fortunes2 && grep '^%$' "$HOME/tmp/fortunes" | wc -l > "$HOME/tmp/fortunes.count"'
 	fortune() {
 		if [ ! -f "$HOME/tmp/fortunes" -o ! -f "$HOME/tmp/fortunes.count" ]
 		then
