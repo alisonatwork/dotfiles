@@ -84,6 +84,7 @@ case "`uname 2> /dev/null`" in
 		alias npm="winpty npm.cmd"
 		alias ping="winpty ping"
 		alias traceroute="winpty tracert"
+		alias wsl="winpty wsl"
 	;;
 	Darwin)
 		alias start="open"
