@@ -108,7 +108,6 @@ then
 	cd ..
 fi
 
-installFile apps/pinyin/pinyin.js "$HOME/bin/pinyin.js"
 case "$UNAME" in
 	MINGW*)
 		installFile apps/bc/dc.exe "$HOME/bin/dc.exe"
@@ -116,6 +115,13 @@ case "$UNAME" in
 	*)
 	;;
 esac
+
+cd scripts
+for i in *
+do
+	installFile "$i" "$HOME/bin/$i"
+done
+cd ..
 
 if git --version > /dev/null 2>&1
 then
