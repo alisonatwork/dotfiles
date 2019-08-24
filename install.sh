@@ -1,9 +1,9 @@
 #!/bin/sh
 
-DRY_RUN=
+dry_run=
 if [ "$1" = "--dry-run" ]
 then
-	DRY_RUN=echo
+	dry_run=echo
 	shift
 fi
 
@@ -31,7 +31,7 @@ case "$0" in
 	;;
 esac
 
-UNAME=`uname 2> /dev/null`
+uname=`uname 2> /dev/null`
 
 installFile() {
 	src="$1"
@@ -55,18 +55,18 @@ installFile() {
 				;;
 			esac
 		else
-			$DRY_RUN mv "$dest" "$dest.orig"
+			$dry_run mv "$dest" "$dest.orig"
 		fi
 	fi
-	$DRY_RUN cp "$src" "$dest"
+	$dry_run cp "$src" "$dest"
 	unset src dest
 }
 
 installDir() {
 	if [ ! -d "$2" ]
 	then
-		$DRY_RUN mkdir -p "$2"
-		$DRY_RUN chmod $1 "$2"
+		$dry_run mkdir -p "$2"
+		$dry_run chmod $1 "$2"
 	fi
 }
 
@@ -89,7 +89,7 @@ do
 	installDir 755 "$HOME/$i"
 done
 
-if [ "$UNAME" = "Darwin" -a -z "$APPDATA" ]
+if [ "$uname" = "Darwin" -a -z "$APPDATA" ]
 then
 	APPDATA="$HOME/Library/Application Support"
 fi
@@ -108,14 +108,14 @@ then
 	cd ..
 fi
 
-case "$UNAME" in
+case "$uname" in
 	MINGW*)
 		installFile apps/bc/dc.exe "$HOME/bin/dc.exe"
-		PSPROFILE=`powershell -command 'echo $profile.CurrentUserAllHosts' 2> /dev/null | cygpath -f - 2> /dev/null`
-		if [ -n "$PSPROFILE" ]
+		psprofile=`powershell -command 'echo $profile.CurrentUserAllHosts' 2> /dev/null | cygpath -f - 2> /dev/null`
+		if [ -n "$psprofile" ]
 		then
-			installDir 755 "`dirname $PSPROFILE`"
-			installFile profile.ps1 "$PSPROFILE"
+			installDir 755 "`dirname $psprofile`"
+			installFile profile.ps1 "$psprofile"
 		fi
 	;;
 	*)
@@ -131,7 +131,7 @@ cd ..
 
 if [ -x "`command -v git`" ]
 then
-	$DRY_RUN git config --global push.default simple
-	$DRY_RUN git config --global pull.rebase true
+	$dry_run git config --global push.default simple
+	$dry_run git config --global pull.rebase true
 fi
 
