@@ -72,7 +72,7 @@ installDir() {
 
 for i in .[a-z]*
 do
-	if [ -d $i ]
+	if [ -d $i -o "$i" = ".gitattributes" ]
 	then
 		continue
 	fi
