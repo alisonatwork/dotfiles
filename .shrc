@@ -1,4 +1,4 @@
-set -o emacs
+set -o emacs 2> /dev/null
 
 umask 022
 
