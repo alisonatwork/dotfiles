@@ -111,6 +111,12 @@ fi
 case "$UNAME" in
 	MINGW*)
 		installFile apps/bc/dc.exe "$HOME/bin/dc.exe"
+		PSPROFILE=`powershell -command 'echo $profile.CurrentUserAllHosts' 2> /dev/null | cygpath -f - 2> /dev/null`
+		if [ -n "$PSPROFILE" ]
+		then
+			installDir 755 "`dirname $PSPROFILE`"
+			installFile profile.ps1 "$PSPROFILE"
+		fi
 	;;
 	*)
 	;;
@@ -123,7 +129,7 @@ do
 done
 cd ..
 
-if git --version > /dev/null 2>&1
+if [ -x "`command -v git`" ]
 then
 	$DRY_RUN git config --global push.default simple
 	$DRY_RUN git config --global pull.rebase true
