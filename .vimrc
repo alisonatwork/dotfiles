@@ -23,3 +23,5 @@ autocmd BufNewFile,BufRead .shrc set filetype=sh
 autocmd FileType go,make,sh set noexpandtab
 autocmd FileType js,json set sw=2 ts=2
 
+map ` ~
+
