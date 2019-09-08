@@ -78,6 +78,7 @@ esac
 case "`uname 2> /dev/null`" in
 	MINGW*)
 		alias dc="winpty dc"
+		alias getmybase="curl -o $HOME/tmp/mybase.txt https://download.dnscrypt.info/blacklists/domains/mybase.txt"
 		alias gradlew="winpty ./gradlew.bat"
 		alias ifconfig="winpty ipconfig"
 		alias node="winpty node"
