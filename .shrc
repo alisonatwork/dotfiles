@@ -17,6 +17,7 @@ alias ll="ls -l"
 alias r="fc -e -"
 
 alias fixperms='chmod -R go-rwx "$HOME/.ssh" "$HOME/mail"'
+alias pythondev='eval "$(pyenv init -)" && eval "$(pyenv virtualenv-init -)" && export PYENV_VIRTUALENV_DISABLE_PROMPT=1'
 
 if [ ! -x "`command -v cedict`" ]
 then
