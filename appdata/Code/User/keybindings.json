@@ -99,5 +99,10 @@
         "key": "ctrl+h",
         "command": "workbench.view.search",
         "when": "!searchViewletVisible"
+    },
+    {
+        "key": "ctrl+h",
+        "command": "workbench.view.search.focus",
+        "when": "searchViewletVisible"
     }
 ]
