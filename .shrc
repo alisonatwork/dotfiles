@@ -99,6 +99,9 @@ case "`uname 2> /dev/null`" in
 			;;
 		esac
 	;;
+	Linux)
+		alias ls="ls --color=never"
+	;;
 	*)
 	;;
 esac
