@@ -104,5 +104,10 @@
         "key": "ctrl+h",
         "command": "workbench.view.search.focus",
         "when": "searchViewletVisible"
+    },
+    {
+        "key": "shift+alt+r",
+        "command": "renameFile",
+        "when": "explorerViewletVisible && filesExplorerFocus && !explorerResourceIsRoot && !explorerResourceReadonly && !inputFocus"
     }
 ]
