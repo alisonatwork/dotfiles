@@ -7,8 +7,7 @@ if (Test-Path($DnsCryptProxyDir)) {
   echo "Stopping dnscrypt-proxy..."
   spsv dnscrypt-proxy
   echo "Replacing $DnsCryptProxyDir\mybase.txt"
-  del "$DnsCryptProxyDir\mybase.txt.old"
-  move "$DnsCryptProxyDir\mybase.txt" "$DnsCryptProxyDir\mybase.txt.old"
+  move -force "$DnsCryptProxyDir\mybase.txt" "$DnsCryptProxyDir\mybase.txt.old"
   move "$env:TEMP\mybase.txt" "$DnsCryptProxyDir\mybase.txt"
   echo "Starting dnscrypt-proxy..."
   sasv dnscrypt-proxy
