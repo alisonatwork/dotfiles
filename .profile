@@ -2,6 +2,13 @@ EDITOR=vi
 VISUAL=vi
 export EDITOR VISUAL
 
+case "`command -v vi | xargs readlink 2> /dev/null`" in
+	*busybox*)
+		EXINIT="set ai tabstop=4 noic"
+		export EXINIT
+	;;
+esac
+
 if [ -x `command -v less` ]
 then
 	PAGER=less
