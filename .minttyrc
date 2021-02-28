@@ -4,3 +4,4 @@ Rows=43
 MiddleClickAction=void
 RightClickAction=paste
 Transparency=medium
+Term=xterm-256color
