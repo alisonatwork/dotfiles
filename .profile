@@ -73,7 +73,12 @@ esac
 
 case "$-" in
 	*i*)
-		PS1='$ '
+		if [ "$USER" = "root" ]
+		then
+			PS1='# '
+		else
+			PS1='$ '
+		fi
 		PS2='> '
 		PS3='#? '
 		PS4='+ '
