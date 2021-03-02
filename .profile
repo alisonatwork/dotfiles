@@ -11,9 +11,16 @@ esac
 
 if [ -x `command -v less` ]
 then
-	PAGER=less
-	LESS="-X -R -F"
-	export LESS
+	case "`command -v less | xargs readlink 2> /dev/null`" in
+		*busybox*)
+			PAGER=more
+		;;
+		*)
+			PAGER=less
+			LESS="-X -R -F"
+			export LESS
+		;;
+	esac
 else
 	PAGER=more
 fi
