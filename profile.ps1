@@ -7,3 +7,9 @@ if (Test-Path($ChocolateyProfile)) {
   Import-Module "$ChocolateyProfile"
 }
 
+$Csc = gci "$env:windir\Microsoft.NET\Framework64\*\csc.exe" -ea silent | select -last 1
+if ($Csc) {
+  Set-Alias -Name csc -Value $Csc
+  $Csc = $null
+}
+
