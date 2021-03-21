@@ -106,6 +106,16 @@
         "when": "searchViewletVisible"
     },
     {
+        "key": "ctrl+o",
+        "command": "workbench.view.explorer",
+        "when": "!explorerViewletVisible"
+    },
+    {
+        "key": "ctrl+o",
+        "command": "outline.focus",
+        "when": "explorerViewletVisible"
+    },
+    {
         "key": "shift+alt+r",
         "command": "renameFile",
         "when": "explorerViewletVisible && filesExplorerFocus && !explorerResourceIsRoot && !explorerResourceReadonly && !inputFocus"
