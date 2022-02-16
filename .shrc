@@ -78,7 +78,6 @@ esac
 
 case "`uname 2> /dev/null`" in
 	MINGW*)
-		alias dc="winpty dc"
 		alias gradlew="winpty ./gradlew.bat"
 		alias ifconfig="winpty ipconfig"
 		alias node="winpty node"
