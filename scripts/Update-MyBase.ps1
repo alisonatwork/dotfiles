@@ -1,14 +1,17 @@
 #!/usr/bin/env powershell
 
 $DnsCryptProxyDir = "$env:ChocolateyInstall\lib\dnscrypt-proxy\tools\win64"
+$MyBaseDownload = "$env:TEMP\mybase.txt"
 if (Test-Path($DnsCryptProxyDir)) {
   echo "Downloading latest mybase..."
-  iwr https://download.dnscrypt.info/blacklists/domains/mybase.txt -OutFile "$env:TEMP\mybase.txt"
+  iwr https://download.dnscrypt.info/blacklists/domains/mybase.txt -OutFile $MyBaseDownload
   echo "Stopping dnscrypt-proxy..."
   spsv dnscrypt-proxy
-  echo "Replacing $DnsCryptProxyDir\mybase.txt"
-  move -force "$DnsCryptProxyDir\mybase.txt" "$DnsCryptProxyDir\mybase.txt.old"
-  move "$env:TEMP\mybase.txt" "$DnsCryptProxyDir\mybase.txt"
+  if (Test-Path($MyBaseDownload)) {
+    echo "Replacing $DnsCryptProxyDir\mybase.txt"
+    move -force "$DnsCryptProxyDir\mybase.txt" "$DnsCryptProxyDir\mybase.txt.old"
+    move $MyBaseDownload "$DnsCryptProxyDir\mybase.txt"
+  }
   echo "Starting dnscrypt-proxy..."
   sasv dnscrypt-proxy
 } else {
