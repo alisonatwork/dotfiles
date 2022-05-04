@@ -84,6 +84,7 @@ case "`uname 2> /dev/null`" in
 		alias npm="winpty npm.cmd"
 		alias nslookup="winpty nslookup"
 		alias ping="winpty ping"
+		alias python="winpty python"
 		alias traceroute="winpty tracert"
 		alias wsl="winpty wsl"
 	;;
