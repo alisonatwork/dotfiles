@@ -5,6 +5,8 @@
     "editor.wordWrapColumn": 132,
     "editor.wrappingIndent": "none",
 
+    "files.autoSave": "onFocusChange",
+
     "window.menuBarVisibility": "toggle",
 
     "terminal.integrated.copyOnSelection": true,
