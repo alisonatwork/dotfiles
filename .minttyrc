@@ -1,4 +1,4 @@
-BoldAsFont=-1
+BoldAsFont=yes
 Columns=132
 Rows=43
 MiddleClickAction=void
@@ -6,3 +6,6 @@ RightClickAction=paste
 Transparency=medium
 Term=xterm-256color
 CopyAsRTF=no
+Font=Cascadia Mono
+FontHeight=9
+CursorType=underscore
