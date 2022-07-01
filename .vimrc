@@ -8,6 +8,7 @@ set clipboard=
 set expandtab
 set noincsearch
 set ruler
+set shiftround
 set showcmd
 
 if has('gui_running')
