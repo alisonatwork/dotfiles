@@ -91,6 +91,9 @@ case "$-" in
 		PS4='+ '
 		export PS1 PS2 PS3 PS4
 
+		VIRTUAL_ENV_DISABLE_PROMPT=1
+		export VIRTUAL_ENV_DISABLE_PROMPT
+
 		if [ -x "`command -v fortune`" ]
 		then
 			`command -v fortune`
