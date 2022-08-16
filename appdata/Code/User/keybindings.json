@@ -2,13 +2,17 @@
     {
         "key": "oem_3",
         "command": "type",
-        "args": { "text": "~" },
+        "args": {
+            "text": "~"
+        },
         "when": "amVim.mode != 'INSERT'"
     },
     {
         "key": "shift+oem_2",
         "command": "type",
-        "args": { "text": "/" },
+        "args": {
+            "text": "/"
+        },
         "when": "amVim.mode != 'INSERT'"
     },
     {
@@ -119,5 +123,20 @@
         "key": "shift+alt+r",
         "command": "renameFile",
         "when": "explorerViewletVisible && filesExplorerFocus && !explorerResourceIsRoot && !explorerResourceReadonly && !inputFocus"
+    },
+    {
+        "key": "ctrl+alt+h",
+        "command": "editor.showCallHierarchy",
+        "when": "editorHasCallHierarchyProvider && editorTextFocus && !inReferenceSearchEditor"
+    },
+    {
+        "key": "ctrl+alt+h",
+        "command": "references-view.showCallHierarchy",
+        "when": "editorHasCallHierarchyProvider"
+    },
+    {
+        "key": "escape escape",
+        "command": "workbench.action.focusActiveEditorGroup",
+        "when": "!editorFocus"
     }
 ]
