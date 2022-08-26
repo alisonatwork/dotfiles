@@ -8,6 +8,7 @@ alias ali='. "$ENV"'
 alias cd..="cd .."
 alias cdup="cd .."
 alias cls=clear
+alias del=rm
 alias dir=ls
 alias h="fc -l"
 alias j=jobs
