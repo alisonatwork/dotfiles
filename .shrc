@@ -100,6 +100,10 @@ case "`uname 2> /dev/null`" in
 	;;
 	Linux)
 		alias ls="ls --color=never"
+		if [ -f /etc/fedora-release -a ! -x /usr/bin/vim ]
+		then
+			alias vi="vi -u $HOME/.vimrc"
+		fi
 	;;
 	*)
 	;;
