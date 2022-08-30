@@ -1,6 +1,8 @@
 set ai nu smd sw=4 ts=4
 
-syntax on
+if has('syntax')
+  syntax on
+endif
 filetype plugin indent on
 
 set backspace=indent,eol,start
