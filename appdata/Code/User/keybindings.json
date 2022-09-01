@@ -101,22 +101,16 @@
     },
     {
         "key": "ctrl+h",
-        "command": "workbench.view.search",
-        "when": "!searchViewletVisible"
-    },
-    {
-        "key": "ctrl+h",
-        "command": "workbench.view.search.focus",
-        "when": "searchViewletVisible"
-    },
-    {
-        "key": "ctrl+o",
-        "command": "workbench.view.explorer",
-        "when": "!explorerViewletVisible"
+        "command": "workbench.action.findInFiles"
     },
     {
         "key": "ctrl+o",
         "command": "outline.focus",
+        "when": "!explorerViewletVisible"
+    },
+    {
+        "key": "ctrl+o",
+        "command": "workbench.action.gotoSymbol",
         "when": "explorerViewletVisible"
     },
     {
@@ -133,6 +127,24 @@
         "key": "ctrl+alt+h",
         "command": "references-view.showCallHierarchy",
         "when": "editorHasCallHierarchyProvider"
+    },
+    {
+        "key": "ctrl+t",
+        "command": "editor.showTypeHierarchy",
+        "when": "editorHasTypeHierarchyProvider && editorTextFocus"
+    },
+    {
+        "key": "ctrl+t",
+        "command": "references-view.findImplementations",
+        "when": "!editorHasTypeHierarchyProvider && editorHasImplementationProvider && editorTextFocus"
+    },
+    {
+        "key": "ctrl+shift+t",
+        "command": "workbench.action.showAllSymbols"
+    },
+    {
+        "key": "ctrl+e",
+        "command": "workbench.action.showAllEditorsByMostRecentlyUsed"
     },
     {
         "key": "escape escape",
