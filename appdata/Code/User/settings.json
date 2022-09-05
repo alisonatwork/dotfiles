@@ -13,5 +13,8 @@
     "terminal.integrated.cursorBlinking": true,
     "terminal.integrated.cursorStyle": "underline",
 
-    "amVim.bindCtrlCommands": false
+    "amVim.bindCtrlCommands": false,
+    "git.enableStatusBarSync": false,
+    "gitblame.ignoreWhitespace": true,
+    "gitblame.statusBarMessageFormat": "${author.date} ${author.name} ${commit.summary,50}"
 }
