@@ -23,3 +23,7 @@ Register-ArgumentCompleter -Native -CommandName winget -ScriptBlock {
         }
 }
 
+if (Get-InstalledModule -ea silent WSLTabCompletion) {
+  Import-Module WSLTabCompletion
+}
+
