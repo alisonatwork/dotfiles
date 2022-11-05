@@ -59,14 +59,7 @@ then
 	export ENV
 fi
 
-case "`uname 2> /dev/null`" in
-	MINGW*|Darwin)
-		TERM=xterm-256color
-	;;
-	*)
-		TERM=xterm
-	;;
-esac
+TERM=xterm-256color
 export TERM
 
 case "`hostname 2> /dev/null`" in
