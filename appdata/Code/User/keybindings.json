@@ -129,20 +129,6 @@
         "when": "editorHasCallHierarchyProvider"
     },
     {
-        "key": "ctrl+t",
-        "command": "editor.showTypeHierarchy",
-        "when": "editorHasTypeHierarchyProvider && editorTextFocus"
-    },
-    {
-        "key": "ctrl+t",
-        "command": "references-view.findImplementations",
-        "when": "!editorHasTypeHierarchyProvider && editorHasImplementationProvider && editorTextFocus"
-    },
-    {
-        "key": "ctrl+shift+t",
-        "command": "workbench.action.showAllSymbols"
-    },
-    {
         "key": "ctrl+e",
         "command": "workbench.action.showAllEditorsByMostRecentlyUsed"
     },
