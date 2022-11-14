@@ -20,7 +20,8 @@ if has('gui_running')
   colorscheme desert
 endif
 
-set t_ti= t_te=
+set t_ti=
+set t_te=[0\ q
 
 autocmd BufNewFile,BufRead .shrc set filetype=sh
 autocmd FileType go,make,sh set noexpandtab
