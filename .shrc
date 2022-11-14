@@ -115,7 +115,7 @@ case "`uname 2> /dev/null`" in
 		alias ls="ls --color=never"
 		if [ -f /etc/fedora-release -a ! -x /usr/bin/vim ]
 		then
-			alias vi="vi -u $HOME/.vimrc"
+			alias vi="vi -c 'set nocompatible' -u $HOME/.vimrc"
 		fi
 		case "$SHELL" in
 			*bash*)
