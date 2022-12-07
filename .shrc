@@ -16,6 +16,7 @@ alias l='$PAGER'
 alias lk="ls -l | grep ^d"
 alias ll="ls -l"
 alias r="fc -e -"
+alias whereami="uname -n"
 
 alias fixperms='chmod -R go-rwx "$HOME/.ssh" "$HOME/mail"'
 
