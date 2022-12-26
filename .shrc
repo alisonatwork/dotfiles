@@ -122,6 +122,7 @@ case "`uname 2> /dev/null`" in
 		case "$SHELL" in
 			*bash*)
 				bind "set completion-ignore-case on"
+				unset PROMPT_COMMAND
 			;;
 			*)
 			;;
