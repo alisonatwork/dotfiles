@@ -83,14 +83,9 @@ case "$SHELL" in
 	*ksh*)
 	;;
 	*)
-		if whereis -qb whereis > /dev/null 2>&1
-		then
-			alias whence="whereis -qb"
-		else
-			whence() {
-				command -v $1 | grep ^/
-			}
-		fi
+		whence() {
+			command -v "$@" | sed 's/^alias [^=]*=//'
+		}
 	;;
 esac
 
