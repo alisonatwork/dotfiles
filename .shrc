@@ -20,6 +20,10 @@ alias whereami="uname -n"
 
 alias fixperms='chmod -R go-rwx "$HOME/.ssh" "$HOME/mail"'
 
+resettitle() {
+	echo -n "]0;`hostname 2> /dev/null || echo $SHELL`"
+}
+
 if [ ! -x "`command -v cedict`" ]
 then
 	alias getcedict='curl -o "$HOME/tmp/cedict_1_0_ts_utf-8_mdbg.zip" https://www.mdbg.net/chinese/export/cedict/cedict_1_0_ts_utf-8_mdbg.zip && unzip "$HOME/tmp/cedict_1_0_ts_utf-8_mdbg.zip" -d "$HOME/tmp"'
