@@ -1,5 +1,7 @@
 #!/bin/sh
 
+umask 022
+
 dry_run=
 if [ "$1" = "--dry-run" ]
 then
