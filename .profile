@@ -62,7 +62,7 @@ fi
 TERM=xterm-256color
 export TERM
 
-case "`hostname 2> /dev/null`" in
+case "`uname -n 2> /dev/null`" in
 	sdf)
 		MAIL=/mail/${LOGNAME:?}
 		export MAIL
