@@ -87,6 +87,9 @@ case "$-" in
 		VIRTUAL_ENV_DISABLE_PROMPT=1
 		export VIRTUAL_ENV_DISABLE_PROMPT
 
+		GIT_COMPLETION_IGNORE_CASE=1
+		export GIT_COMPLETION_IGNORE_CASE
+
 		if [ -x "`command -v fortune`" ]
 		then
 			`command -v fortune`
