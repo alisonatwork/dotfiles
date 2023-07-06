@@ -16,7 +16,7 @@ winget install qBittorrent.qBittorrent
 winget install DNSCrypt.dnscrypt-proxy --scope machine
 winget install DominikReichl.KeePass
 winget install Mozilla.Thunderbird
-winget install OpenVPNTechnologies.OpenVPN
+winget install OpenVPNTechnologies.OpenVPN --version 2.5.040
 winget install PrestonN.FreeTube
 
 # media
