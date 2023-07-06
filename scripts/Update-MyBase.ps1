@@ -1,6 +1,6 @@
 #!/usr/bin/env powershell
 
-$DnsCryptProxyDir = "$env:ChocolateyInstall\lib\dnscrypt-proxy\tools\win64"
+$DnsCryptProxyDir = "C:\Program Files\WinGet\Packages\DNSCrypt.dnscrypt-proxy_Microsoft.Winget.Source_8wekyb3d8bbwe\win64"
 $MyBaseDownload = "$env:TEMP\mybase.txt"
 if (Test-Path($DnsCryptProxyDir)) {
   echo "Downloading latest mybase..."
