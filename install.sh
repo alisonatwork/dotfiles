@@ -110,6 +110,20 @@ then
 	cd ..
 fi
 
+if [ -d "$LOCALAPPDATA" ]
+then
+	cd localappdata
+	for i in Packages/Microsoft.WindowsTerminal_8wekyb3d8bbwe/LocalState
+	do
+		installDir 755 "$LOCALAPPDATA/$i"
+		for j in $i/*
+		do
+			installFile "$j" "$LOCALAPPDATA/$j"
+		done
+	done
+	cd ..
+fi
+
 case "$uname" in
 	MINGW*)
 		installFile apps/bc/dc.exe "$HOME/bin/dc.exe"
