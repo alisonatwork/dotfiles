@@ -6,7 +6,7 @@ $path = 'HKCU:\Software\Microsoft\Windows\CurrentVersion\Explorer\Advanced'
     Hidden                       = 1
     HideFileExt                  = 0
     NavPaneExpandToCurrentFolder = 1
-    NavPaneShowAllFolders        = 0
+    NavPaneShowAllFolders        = 1
     ShowSuperHidden              = 0
 }.GetEnumerator() | foreach {
     echo "Setting $($_.key) $($_.value)..."
