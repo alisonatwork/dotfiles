@@ -149,5 +149,6 @@ if [ -x "`command -v git`" ]
 then
 	$dry_run git config --global push.default simple
 	$dry_run git config --global pull.rebase true
+	$dry_run git config --global diff.algorithm histogram
 fi
 
