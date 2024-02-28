@@ -3,17 +3,17 @@
 # util
 winget install 7zip.7zip
 winget install Anki.Anki
-winget install Genymobile.scrcpy --scope machine
+winget install Genymobile.scrcpy
 winget install Git.Git
 winget install Google.EarthPro
-winget install Microsoft.VisualStudioCode --scope machine
+winget install Microsoft.VisualStudioCode
 winget install Redhat.Podman
 winget install SumatraPDF.SumatraPDF
 
 # net
 winget install eloston.ungoogled-chromium
 winget install qBittorrent.qBittorrent
-winget install DNSCrypt.dnscrypt-proxy --scope machine
+winget install DNSCrypt.dnscrypt-proxy
 winget install DominikReichl.KeePass
 winget install Mozilla.Thunderbird
 winget install OpenVPNTechnologies.OpenVPN --version 2.5.040

@@ -113,7 +113,7 @@ fi
 if [ -d "$LOCALAPPDATA" ]
 then
 	cd localappdata
-	for i in Packages/Microsoft.WindowsTerminal_8wekyb3d8bbwe/LocalState
+	for i in Packages/Microsoft.*/LocalState
 	do
 		installDir 755 "$LOCALAPPDATA/$i"
 		for j in $i/*
