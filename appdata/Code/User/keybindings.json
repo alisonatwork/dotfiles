@@ -23,12 +23,12 @@
     {
         "key": "ctrl+shift+f",
         "command": "editor.action.formatDocument",
-        "when": "editorHasDocumentFormattingProvider && editorHasDocumentFormattingProvider && editorTextFocus && !editorReadonly"
+        "when": "editorHasDocumentFormattingProvider && editorTextFocus && !editorReadonly && !(editorHasDocumentSelectionFormattingProvider && editorHasSelection)"
     },
     {
-        "key": "cmd+shift+f",
-        "command": "editor.action.formatDocument",
-        "when": "isMac && editorHasDocumentFormattingProvider && editorHasDocumentFormattingProvider && editorTextFocus && !editorReadonly"
+        "key": "ctrl+shift+f",
+        "command": "editor.action.formatSelection",
+        "when": "editorHasDocumentSelectionFormattingProvider && editorHasSelection && editorTextFocus && !editorReadonly"
     },
     {
         "key": "f3",
@@ -65,11 +65,6 @@
         "when": "editorHasReferenceProvider"
     },
     {
-        "key": "cmd+g",
-        "command": "references-view.find",
-        "when": "isMac && editorHasReferenceProvider"
-    },
-    {
         "key": "ctrl+l",
         "command": "workbench.action.gotoLine"
     },
@@ -86,18 +81,8 @@
         "command": "workbench.action.quickOpen"
     },
     {
-        "key": "cmd+shift+r",
-        "command": "workbench.action.quickOpen",
-        "when": "isMac"
-    },
-    {
         "key": "ctrl+shift+a",
         "command": "workbench.action.showCommands"
-    },
-    {
-        "key": "cmd+shift+a",
-        "command": "workbench.action.showCommands",
-        "when": "isMac"
     },
     {
         "key": "ctrl+h",
