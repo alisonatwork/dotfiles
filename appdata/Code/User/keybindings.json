@@ -85,6 +85,11 @@
         "command": "workbench.action.showCommands"
     },
     {
+        "key": "ctrl+shift+o",
+        "command": "editor.action.organizeImports",
+        "when": "textInputFocus && !editorReadonly && supportedCodeAction =~ /(\\s|^)source\\.organizeImports\\b/"
+    },
+    {
         "key": "ctrl+h",
         "command": "workbench.action.findInFiles"
     },
