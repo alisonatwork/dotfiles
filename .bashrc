@@ -9,4 +9,3 @@ then
 else
 	echo "Can't find ENV" 1>&2
 fi
-

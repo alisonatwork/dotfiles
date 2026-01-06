@@ -7,4 +7,3 @@ gp -path $glob -name 'FlipFlopWheel' -ea silent |
     echo ($_.pspath -replace '^.*::','')
     sp -path $_.pspath -name 'FlipFlopWheel' -value 1
   }
-

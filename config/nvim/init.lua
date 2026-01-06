@@ -22,4 +22,3 @@ vim.filetype.add({
 })
 
 vim.keymap.set('n', '`', '~')
-

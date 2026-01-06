@@ -17,4 +17,3 @@ if (Test-Path($DnsCryptProxyDir)) {
 } else {
   echo "Can't find dnscrypt-proxy at $DnsCryptProxyDir"
 }
-

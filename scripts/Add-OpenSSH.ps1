@@ -5,4 +5,3 @@ Get-WindowsCapability -Online | where Name -like 'OpenSSH*' | where State -eq 'N
   foreach {
     Add-WindowsCapability -Online -Name $_.Name
   }
-
