@@ -22,6 +22,14 @@ alias fixperms='chmod -R go-rwx "$HOME/.ssh" "$HOME/mail"'
 alias pushdotfiles='scp "$HOME/.bash_profile" "$HOME/.bashrc" "$HOME/.exrc" "$HOME/.profile" "$HOME/.shrc" "$HOME/.vimrc"'
 alias resettitle='printf "\033]0;`uname -n 2> /dev/null || echo $SHELL`\a"'
 
+if [ -x "`command -v nvim`" ]
+then
+	alias vi="nvim"
+elif [ -x "`command -v vim`" ]
+then
+	alias vi="vim"
+fi
+
 if [ ! -x "`command -v cedict`" ]
 then
 	alias getcedict='curl -o "$HOME/tmp/cedict_1_0_ts_utf-8_mdbg.zip" https://www.mdbg.net/chinese/export/cedict/cedict_1_0_ts_utf-8_mdbg.zip && unzip "$HOME/tmp/cedict_1_0_ts_utf-8_mdbg.zip" -d "$HOME/tmp"'
@@ -115,7 +123,10 @@ case "`uname 2> /dev/null`" in
 		alias ls="ls --color=never"
 		if [ -f /etc/fedora-release -a ! -x /usr/bin/vim ]
 		then
-			alias vi="vi -c 'set nocompatible' -u $HOME/.vimrc"
+			if ! alias vi 2>/dev/null 1>&2
+			then
+				alias vi="vi -c 'set nocompatible' -u $HOME/.vimrc"
+			fi
 		fi
 		case "$SHELL" in
 			*bash*)

@@ -109,12 +109,15 @@ case "$uname" in
 	MINGW*)
 		installRecursive Code "$APPDATA"
 		installRecursive Packages "$LOCALAPPDATA"
+		installRecursive nvim "$LOCALAPPDATA"
 	;;
 	Darwin)
 		installRecursive Code "$HOME/Library/Application Support"
+		installRecursive nvim "$HOME/.config"
 	;;
 	*)
 		installRecursive Code "$HOME/.config"
+		installRecursive nvim "$HOME/.config"
 	;;
 esac
 cd ..
