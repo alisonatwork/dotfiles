@@ -103,6 +103,7 @@ case "`uname 2> /dev/null`" in
 		alias npm="winpty npm.cmd"
 		alias npx="winpty npx.cmd"
 		alias nslookup="winpty nslookup"
+		alias nvim="TERM=linux nvim"
 		alias php="winpty php"
 		alias ping="winpty ping"
 		alias python="winpty python"
@@ -148,4 +149,3 @@ case "`uname -n 2> /dev/null`" in
 	*)
 	;;
 esac
-
