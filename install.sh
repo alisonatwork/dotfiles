@@ -72,6 +72,19 @@ installDir() {
 	fi
 }
 
+installRecursive() {
+	installDir 755 "$2/$1"
+	for i in "$1"/*
+	do
+		if [ -d "$i" ]
+		then
+			installRecursive "$i" "$2"
+		else
+			installFile "$i" "$2/$i"
+		fi
+	done
+}
+
 for i in .[a-z]*
 do
 	if [ -d "$i" -o "$i" = ".gitattributes" ]
@@ -91,38 +104,20 @@ do
 	installDir 755 "$HOME/$i"
 done
 
-if [ "$uname" = "Darwin" -a -z "$APPDATA" ]
-then
-	APPDATA="$HOME/Library/Application Support"
-fi
-
-if [ -d "$APPDATA" ]
-then
-	cd appdata
-	for i in Code/User
-	do
-		installDir 755 "$APPDATA/$i"
-		for j in $i/*
-		do
-			installFile "$j" "$APPDATA/$j"
-		done
-	done
-	cd ..
-fi
-
-if [ -d "$LOCALAPPDATA" ]
-then
-	cd localappdata
-	for i in Packages/Microsoft.*/LocalState
-	do
-		installDir 755 "$LOCALAPPDATA/$i"
-		for j in $i/*
-		do
-			installFile "$j" "$LOCALAPPDATA/$j"
-		done
-	done
-	cd ..
-fi
+cd config
+case "$uname" in
+	MINGW*)
+		installRecursive Code "$APPDATA"
+		installRecursive Packages "$LOCALAPPDATA"
+	;;
+	Darwin)
+		installRecursive Code "$HOME/Library/Application Support"
+	;;
+	*)
+		installRecursive Code "$HOME/.config"
+	;;
+esac
+cd ..
 
 case "$uname" in
 	MINGW*)
