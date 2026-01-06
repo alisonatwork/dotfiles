@@ -59,7 +59,12 @@ then
 	export ENV
 fi
 
-TERM=xterm-256color
+if [ -f "$HOME/.terminfo/xterm-256color-noalt.terminfo" ]
+then
+    TERM=xterm-256color-noalt
+else
+    TERM=xterm-256color
+fi
 export TERM
 
 case "`uname -n 2> /dev/null`" in
