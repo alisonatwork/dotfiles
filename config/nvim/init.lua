@@ -9,6 +9,8 @@ vim.o.incsearch = false
 vim.o.shiftround = true
 
 vim.cmd 'colorscheme torte'
+vim.cmd 'highlight Normal guibg=NONE ctermbg=NONE'
+vim.cmd 'highlight StatusLine guibg=NONE ctermbg=NONE'
 
 -- disable bad nvim defaults
 vim.o.hlsearch = false
