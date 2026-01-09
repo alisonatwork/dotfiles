@@ -8,6 +8,9 @@ filetype plugin indent on
 set backspace=indent,eol,start
 set clipboard=
 set expandtab
+set guicursor=
+set mouse=nvi
+set mousemodel=popup_setpos
 set noincsearch
 set ruler
 set shiftround

@@ -5,6 +5,7 @@ vim.o.tabstop = 4
 
 -- from vimrc
 vim.o.expandtab = true
+vim.o.guicursor = ''
 vim.o.incsearch = false
 vim.o.shiftround = true
 
@@ -14,8 +15,7 @@ vim.cmd 'highlight StatusLine guibg=NONE ctermbg=NONE'
 
 -- disable bad nvim defaults
 vim.o.hlsearch = false
-vim.o.guicursor = ''
-vim.o.mouse = ''
+vim.o.startofline = true
 
 vim.filetype.add({
     filename = {
