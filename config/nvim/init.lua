@@ -8,7 +8,7 @@ vim.o.expandtab = true
 vim.o.incsearch = false
 vim.o.shiftround = true
 
-vim.cmd 'colorscheme vim'
+vim.cmd 'colorscheme torte'
 
 -- disable bad nvim defaults
 vim.o.hlsearch = false

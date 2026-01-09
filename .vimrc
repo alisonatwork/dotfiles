@@ -12,13 +12,9 @@ set noincsearch
 set ruler
 set shiftround
 set showcmd
+set termguicolors
 
-if has('gui_running')
-  set guioptions-=T
-  set guifont=Consolas:h10
-  set lines=43 columns=132 linespace=0
-  colorscheme desert
-endif
+colorscheme torte
 
 set t_ti=
 set t_te=[0\ q
