@@ -17,9 +17,10 @@ set shiftround
 set showcmd
 set termguicolors
 
-colorscheme torte
-highlight Normal guibg=NONE ctermbg=NONE
-highlight StatusLine guibg=NONE ctermbg=NONE
+set background=dark
+highlight LineNr guifg=DarkGrey ctermfg=DarkGrey
+highlight StatusLine gui=bold cterm=bold
+highlight StatusLineNC gui=NONE cterm=NONE
 
 set t_ti=
 set t_te=[0\ q

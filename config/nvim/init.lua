@@ -9,9 +9,11 @@ vim.o.guicursor = ''
 vim.o.incsearch = false
 vim.o.shiftround = true
 
-vim.cmd 'colorscheme torte'
-vim.cmd 'highlight Normal guibg=NONE ctermbg=NONE'
-vim.cmd 'highlight StatusLine guibg=NONE ctermbg=NONE'
+vim.o.background = 'dark'
+vim.cmd 'colorscheme vim'
+vim.cmd 'highlight LineNr guifg=DarkGrey ctermfg=DarkGrey'
+vim.cmd 'highlight StatusLine gui=bold cterm=bold'
+vim.cmd 'highlight StatusLineNC gui=NONE cterm=NONE'
 
 -- disable bad nvim defaults
 vim.o.hlsearch = false
