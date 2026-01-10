@@ -25,9 +25,6 @@ vim.filetype.add({
 
 vim.keymap.set('n', '`', '~')
 
-if vim.env.SHELL then
-    vim.o.shell = '"' .. vim.env.SHELL .. '" -l'
-end
 if vim.fn.has('win32') == 1 then
     vim.keymap.set('n', '<C-z>', ':split<CR><C-w><C-w>:set nonu<CR>:terminal<CR>i')
 end

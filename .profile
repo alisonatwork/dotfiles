@@ -72,8 +72,6 @@ case "`uname -n 2> /dev/null`" in
 		MAIL=/mail/${LOGNAME:?}
 		export MAIL
 	;;
-	*)
-	;;
 esac
 
 case "$-" in
@@ -102,7 +100,5 @@ case "$-" in
 		then
 			awk 'BEGIN { srand(); x=int(rand() * '`cat "$HOME/tmp/fortunes.count"`') } /^%$/ { x--;next } x==0' "$HOME/tmp/fortunes"
 		fi
-	;;
-	*)
 	;;
 esac

@@ -3,33 +3,28 @@ then
 	if [ -z "$USERPROFILE" ]
 	then
 		echo "Can't find HOME" 1>&2
-	else
-		export HOME="$USERPROFILE"
+		return
 	fi
+	export HOME="$USERPROFILE"
 fi
 
-if [ -n "$HOME" ]
+shopt -q login_shell && cd "$HOME"
+
+if [ ! -f "$HOME/.profile" ]
 then
-	if [ "$HOME" != "$PWD" ]
-	then
-		cd "$HOME"
-	fi
-	if [ -f "$HOME/.profile" ]
-	then
-		source "$HOME/.profile"
-	else
-		echo "Can't find .profile" 1>&2
-	fi
-	case "$-" in
-		*i*)
-			if [ -f "$HOME/.bashrc" ]
-			then
-				source "$HOME/.bashrc"
-			else
-				echo "Can't find .bashrc" 1>&2
-			fi
-		;;
-		*)
-		;;
-	esac
+	echo "Can't find .profile" 1>&2
+	return
 fi
+
+source "$HOME/.profile"
+
+case "$-" in
+	*i*)
+		if [ ! -f "$ENV" ]
+		then
+			echo "Can't find ${ENV:-ENV}" 1>&2
+			return
+		fi
+		source "$ENV"
+	;;
+esac
