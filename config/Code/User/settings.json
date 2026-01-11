@@ -13,6 +13,8 @@
     "terminal.integrated.cursorBlinking": true,
     "terminal.integrated.cursorStyle": "underline",
 
+    "chat.disableAIFeatures": true,
+
     "amVim.bindCtrlCommands": false,
     "git.enableStatusBarSync": false,
     "gitblame.ignoreWhitespace": true,
