@@ -17,6 +17,9 @@ vim.o.splitright = true
 vim.o.hlsearch = false
 vim.o.startofline = true
 
+-- nvim
+vim.o.winblend = 10
+
 vim.cmd 'colorscheme vim'
 vim.cmd 'highlight! link LineNr Normal'
 vim.cmd 'highlight! link StatusLine ModeMsg'
