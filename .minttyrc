@@ -10,3 +10,4 @@ Font=Cascadia Mono
 FontHeight=9
 CursorType=underscore
 ThemeDark=helmholtz
+ScrollMod=off

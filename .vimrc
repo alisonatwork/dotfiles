@@ -9,12 +9,16 @@ set backspace=indent,eol,start
 set clipboard=
 set expandtab
 set guicursor=
+set keymodel=startsel,stopsel
 set noincsearch
 set mouse=nvi
 set mousemodel=popup_setpos
 set ruler
 set shiftround
 set showcmd
+set selection=exclusive
+set splitbelow
+set splitright
 set termguicolors
 
 set background=dark

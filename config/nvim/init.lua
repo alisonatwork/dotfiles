@@ -7,7 +7,11 @@ vim.o.tabstop = 4
 vim.o.expandtab = true
 vim.o.guicursor = ''
 vim.o.incsearch = false
+vim.o.keymodel = 'startsel,stopsel'
+vim.o.selection = 'exclusive'
 vim.o.shiftround = true
+vim.o.splitbelow = true
+vim.o.splitright = true
 
 -- disable bad nvim defaults
 vim.o.hlsearch = false
@@ -28,6 +32,7 @@ vim.filetype.add({
 
 vim.keymap.set('n', '`', '~')
 
+-- eclipse
 vim.keymap.set('n', '<C-r>', ':Pick files<CR>')
 if vim.fn.eval('&term') == 'ansi' then
     vim.keymap.set('n', '<BS>', ':Pick grep_live<CR>')
@@ -35,8 +40,15 @@ else
     vim.keymap.set('n', '<C-h>', ':Pick grep_live<CR>')
 end
 
+-- intellij
+vim.keymap.set('n', '<C-a>', ':Pick help<CR>')
+vim.keymap.set('n', '<C-e>', ':Pick buffers<CR>')
+
+-- vscode
+vim.keymap.set('n', '<C-\\>', ':vsplit<CR>')
+
 if vim.fn.has('win32') == 1 then
-    vim.keymap.set('n', '<C-z>', ':split<CR><C-w><C-w>:set nonu<CR>:terminal<CR>i')
+    vim.keymap.set('n', '<C-z>', ':split<CR>:set nonu<CR>:terminal<CR>i')
 end
 
 vim.pack.add({
