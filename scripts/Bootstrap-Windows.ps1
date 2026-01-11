@@ -8,6 +8,7 @@ winget install Git.Git
 winget install Google.EarthPro
 winget install Microsoft.VisualStudioCode
 winget install Redhat.Podman
+winget install Rime.Weasel
 winget install SumatraPDF.SumatraPDF
 
 # net
