@@ -9,18 +9,18 @@ set backspace=indent,eol,start
 set clipboard=
 set expandtab
 set guicursor=
+set noincsearch
 set mouse=nvi
 set mousemodel=popup_setpos
-set noincsearch
 set ruler
 set shiftround
 set showcmd
 set termguicolors
 
 set background=dark
-highlight LineNr guifg=DarkGrey ctermfg=DarkGrey
-highlight StatusLine gui=bold cterm=bold
-highlight StatusLineNC gui=NONE cterm=NONE
+highlight! link LineNr Normal
+highlight! link StatusLine ModeMsg
+highlight! link StatusLineNC Normal
 
 set t_ti=
 set t_te=[0\ q

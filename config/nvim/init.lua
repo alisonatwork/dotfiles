@@ -9,15 +9,16 @@ vim.o.guicursor = ''
 vim.o.incsearch = false
 vim.o.shiftround = true
 
-vim.o.background = 'dark'
-vim.cmd 'colorscheme vim'
-vim.cmd 'highlight LineNr guifg=DarkGrey ctermfg=DarkGrey'
-vim.cmd 'highlight StatusLine gui=bold cterm=bold'
-vim.cmd 'highlight StatusLineNC gui=NONE cterm=NONE'
-
 -- disable bad nvim defaults
 vim.o.hlsearch = false
 vim.o.startofline = true
+
+vim.cmd 'colorscheme vim'
+vim.cmd 'highlight! link LineNr Normal'
+vim.cmd 'highlight! link StatusLine ModeMsg'
+vim.cmd 'highlight! link StatusLineNC Normal'
+vim.cmd 'highlight! link StatusLineTerm StatusLine'
+vim.cmd 'highlight! link StatusLineTermNC StatusLineNc'
 
 vim.filetype.add({
     filename = {
