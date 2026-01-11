@@ -6,6 +6,7 @@ endif
 filetype plugin indent on
 
 set backspace=indent,eol,start
+set belloff=all
 set clipboard=
 set expandtab
 set guicursor=
@@ -20,6 +21,7 @@ set selection=exclusive
 set splitbelow
 set splitright
 set termguicolors
+set wildmode=longest,list
 
 set background=dark
 highlight! link LineNr Normal
