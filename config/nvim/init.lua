@@ -28,6 +28,15 @@ vim.filetype.add({
 
 vim.keymap.set('n', '`', '~')
 
+vim.keymap.set('n', '<C-r>', ':Pick files<CR>')
+vim.keymap.set('n', '<C-h>', ':Pick grep_live<CR>')
+
 if vim.fn.has('win32') == 1 then
     vim.keymap.set('n', '<C-z>', ':split<CR><C-w><C-w>:set nonu<CR>:terminal<CR>i')
 end
+
+vim.pack.add({
+    'https://github.com/nvim-mini/mini.pick',
+})
+
+require('mini.pick').setup()

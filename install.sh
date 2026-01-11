@@ -110,14 +110,17 @@ case "$uname" in
 		installRecursive Code "$APPDATA"
 		installRecursive Packages "$LOCALAPPDATA"
 		installRecursive nvim "$LOCALAPPDATA"
+		installRecursive rg "$HOME/.config"
 	;;
 	Darwin)
 		installRecursive Code "$HOME/Library/Application Support"
 		installRecursive nvim "$HOME/.config"
+		installRecursive rg "$HOME/.config"
 	;;
 	*)
 		installRecursive Code "$HOME/.config"
 		installRecursive nvim "$HOME/.config"
+		installRecursive rg "$HOME/.config"
 	;;
 esac
 cd ..

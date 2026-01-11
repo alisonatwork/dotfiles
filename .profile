@@ -93,6 +93,9 @@ case "$-" in
 		GIT_COMPLETION_IGNORE_CASE=1
 		export GIT_COMPLETION_IGNORE_CASE
 
+		RIPGREP_CONFIG_PATH="$HOME/.config/rg/config"
+		export RIPGREP_CONFIG_PATH
+
 		if [ -x "`command -v fortune`" ]
 		then
 			`command -v fortune`

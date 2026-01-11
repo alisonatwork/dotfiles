@@ -8,6 +8,10 @@ if ($Csc) {
   $Csc = $null
 }
 
+if ((Test-Path "$env:UserProfile\.config\rg\config") -and (gcm rg -ea silent)) {
+  $env:RIPGREP_CONFIG_PATH = "$env:UserProfile\.config\rg\config"
+}
+
 if (Test-Path "$env:ProgramFiles\Git\usr\bin") {
   Set-Alias -Name bash -Value "$env:ProgramFiles\Git\usr\bin\bash.exe"
   $env:SHELL = "$env:ProgramFiles\Git\usr\bin\bash.exe"

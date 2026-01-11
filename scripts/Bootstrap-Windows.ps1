@@ -3,6 +3,7 @@
 # util
 winget install 7zip.7zip
 winget install Anki.Anki
+winget install BurntSushi.ripgrep.MSVC
 winget install Genymobile.scrcpy
 winget install Git.Git
 winget install Google.EarthPro
