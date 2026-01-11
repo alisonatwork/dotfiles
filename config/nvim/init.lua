@@ -29,7 +29,11 @@ vim.filetype.add({
 vim.keymap.set('n', '`', '~')
 
 vim.keymap.set('n', '<C-r>', ':Pick files<CR>')
-vim.keymap.set('n', '<C-h>', ':Pick grep_live<CR>')
+if vim.fn.eval('&term') == 'ansi' then
+    vim.keymap.set('n', '<BS>', ':Pick grep_live<CR>')
+else
+    vim.keymap.set('n', '<C-h>', ':Pick grep_live<CR>')
+end
 
 if vim.fn.has('win32') == 1 then
     vim.keymap.set('n', '<C-z>', ':split<CR><C-w><C-w>:set nonu<CR>:terminal<CR>i')
