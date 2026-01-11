@@ -12,6 +12,7 @@ vim.o.selection = 'exclusive'
 vim.o.shiftround = true
 vim.o.splitbelow = true
 vim.o.splitright = true
+vim.o.wildmode = 'longest,list'
 
 -- disable bad nvim defaults
 vim.o.hlsearch = false

@@ -20,6 +20,8 @@ set selection=exclusive
 set splitbelow
 set splitright
 set termguicolors
+set visualbell
+set wildmode=longest,list
 
 set background=dark
 highlight! link LineNr Normal
