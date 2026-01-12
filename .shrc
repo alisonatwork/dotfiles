@@ -111,6 +111,9 @@ case "`uname 2> /dev/null`" in
 		alias traceroute="winpty tracert"
 		alias wsl="winpty wsl"
 	;;
+	MSYS_NT*)
+		alias nvim="TERM=ansi nvim"
+	;;
 	Darwin)
 		alias start="open"
 		case "$SHELL" in

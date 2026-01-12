@@ -106,7 +106,7 @@ done
 
 cd config
 case "$uname" in
-	MINGW*)
+	MINGW*|MSYS_NT*)
 		installRecursive Code "$APPDATA"
 		installRecursive Packages "$LOCALAPPDATA"
 		installRecursive nvim "$LOCALAPPDATA"
@@ -126,7 +126,7 @@ esac
 cd ..
 
 case "$uname" in
-	MINGW*)
+	MINGW*|MSYS_NT*)
 		installFile apps/bc/dc.exe "$HOME/bin/dc.exe"
 		psprofile=`powershell -command 'echo $profile.CurrentUserAllHosts' 2> /dev/null | cygpath -f - 2> /dev/null`
 		if [ -n "$psprofile" ]
@@ -134,8 +134,6 @@ case "$uname" in
 			installDir 755 "`dirname $psprofile`"
 			installFile profile.ps1 "$psprofile"
 		fi
-	;;
-	*)
 	;;
 esac
 
