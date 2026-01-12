@@ -154,7 +154,7 @@ fi
 if [ -x "`command -v tic`" ]
 then
 	installRecursive .terminfo "$HOME"
-	for i in "$HOME"/.terminfo/*.terminfo
+	for i in "$HOME/.terminfo/"*.ti
 	do
 		$dry_run tic -o "$HOME/.terminfo" "$i"
 	done
