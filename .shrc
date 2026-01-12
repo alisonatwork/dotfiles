@@ -21,6 +21,7 @@ alias whereami="uname -n"
 alias fixperms='chmod -R go-rwx "$HOME/.ssh" "$HOME/mail"'
 alias pushdotfiles='scp "$HOME/.bash_profile" "$HOME/.bashrc" "$HOME/.exrc" "$HOME/.profile" "$HOME/.shrc" "$HOME/.vimrc"'
 alias resettitle='printf "\033]0;`uname -n 2> /dev/null || echo $SHELL`\a"'
+alias resetcursor='printf "\033[0 q"'
 
 if [ -x "`command -v nvim`" ]
 then
