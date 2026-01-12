@@ -81,18 +81,19 @@ then
 		*bash*)
 			[ -r "$NVM_DIR/bash_completion" ] && . "$NVM_DIR/bash_completion"
 		;;
-		*)
-		;;
 	esac
 fi
 
+if [ -z "`command -v whence`" ]
+then
+	whence() {
+		command -v "$@" | sed 's/^alias [^=]*=//'
+	}
+fi
+
 case "$SHELL" in
-	*ksh*)
-	;;
-	*)
-		whence() {
-			command -v "$@" | sed 's/^alias [^=]*=//'
-		}
+	*bash*)
+		shopt -s no_empty_cmd_completion
 	;;
 esac
 
@@ -120,8 +121,6 @@ case "`uname 2> /dev/null`" in
 			*bash*)
 				[ -r /Library/Developer/CommandLineTools/usr/share/git-core/git-completion.bash ] && . /Library/Developer/CommandLineTools/usr/share/git-core/git-completion.bash
 			;;
-			*)
-			;;
 		esac
 	;;
 	Linux)
@@ -138,18 +137,12 @@ case "`uname 2> /dev/null`" in
 				bind "set completion-ignore-case on"
 				unset PROMPT_COMMAND
 			;;
-			*)
-			;;
 		esac
-	;;
-	*)
 	;;
 esac
 
 case "`uname -n 2> /dev/null`" in
 	sdf)
 		alias git="git --exec-path=$HOME/pkg/git/libexec/git-core"
-	;;
-	*)
 	;;
 esac
