@@ -109,6 +109,7 @@ case "$uname" in
 	MINGW*|MSYS_NT*)
 		installRecursive Code "$APPDATA"
 		installRecursive Packages "$LOCALAPPDATA"
+		installRecursive mintty "$APPDATA"
 		installRecursive nvim "$LOCALAPPDATA"
 		installRecursive rg "$HOME/.config"
 	;;

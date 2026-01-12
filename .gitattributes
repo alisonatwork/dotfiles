@@ -1,2 +1,3 @@
 .* text eol=lf
 *.sh text eol=lf
+config/mintty/config text eol=lf
