@@ -12,3 +12,4 @@ CursorType=underscore
 ThemeDark=helmholtz
 ScrollMod=off
 NoAltScreen=yes
+CopyTab=yes
