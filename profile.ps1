@@ -19,12 +19,13 @@ if (Test-Path "$env:ProgramFiles\Git\usr\bin") {
   Set-Alias -Name vim -Value "$env:ProgramFiles\Git\usr\bin\vim.exe"
 }
 
-$Nvim = gcm nvim -ea silent | select -expand source
-if ($Nvim) {
-  $env:TERM = "ansi"
-  Set-Alias -Name vi -Value $Nvim
-  Set-Alias -Name vim -Value $Nvim
-  $Nvim = $null
+if (gcm nvim.exe -ea silent) {
+  function nvim {
+    $env:TERM = "ansi"
+    nvim.exe $args
+    $env:TERM = $Null
+  }
+  Set-Alias -Name vi -Value nvim
 }
 
 Register-ArgumentCompleter -Native -CommandName winget -ScriptBlock {
