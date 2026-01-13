@@ -59,7 +59,7 @@ then
 	export ENV
 fi
 
-if [ -f "$HOME/.terminfo/xterm-256color-noalt.ti" ]
+if [ "$TERM_PROGRAM" != "mintty" -a -f "$HOME/.terminfo/xterm-256color-noalt.ti" ]
 then
     TERM=xterm-256color-noalt
 else
