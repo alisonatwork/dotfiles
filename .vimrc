@@ -12,8 +12,6 @@ set expandtab
 set guicursor=
 set keymodel=startsel,stopsel
 set noincsearch
-set mouse=nvi
-set mousemodel=popup_setpos
 set ruler
 set shiftround
 set showcmd

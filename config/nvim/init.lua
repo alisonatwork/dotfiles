@@ -16,6 +16,7 @@ vim.o.wildmode = 'longest,list'
 
 -- disable bad nvim defaults
 vim.o.hlsearch = false
+vim.o.mouse = ''
 vim.o.startofline = true
 vim.o.undofile = true
 
