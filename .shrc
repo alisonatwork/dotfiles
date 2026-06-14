@@ -105,7 +105,7 @@ case "`uname 2> /dev/null`" in
 		alias npm="winpty npm.cmd"
 		alias npx="winpty npx.cmd"
 		alias nslookup="winpty nslookup"
-		alias nvim="TERM=ansi nvim"
+		alias nvim="NVIM_TERMDEFS='{\"enter_ca_mode\": \"\", \"exit_ca_mode\": \"\", \"reset_cursor_style\": \"\\u001b[0 q\"}' nvim"
 		alias php="winpty php"
 		alias ping="winpty ping"
 		alias python="winpty python"
@@ -113,7 +113,7 @@ case "`uname 2> /dev/null`" in
 		alias wsl="winpty wsl"
 	;;
 	MSYS_NT*)
-		alias nvim="TERM=ansi nvim"
+		alias nvim="NVIM_TERMDEFS='{\"enter_ca_mode\": \"\", \"exit_ca_mode\": \"\", \"reset_cursor_style\": \"\\u001b[0 q\"}' nvim"
 	;;
 	Darwin)
 		alias start="open"

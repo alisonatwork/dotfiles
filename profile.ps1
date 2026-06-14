@@ -21,9 +21,9 @@ if (Test-Path "$env:ProgramFiles\Git\usr\bin") {
 
 if (gcm nvim.exe -ea silent) {
   function nvim {
-    $env:TERM = "ansi"
+    $env:NVIM_TERMDEFS = "{`"enter_ca_mode`": `"`", `"exit_ca_mode`": `"`", `"reset_cursor_style`": `"\u001b[0 q`"}"
     nvim.exe $args
-    $env:TERM = $Null
+    $env:NVIM_TERMDEFS = $Null
   }
   Set-Alias -Name vi -Value nvim
 }
