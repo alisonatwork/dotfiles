@@ -8,6 +8,12 @@ if ($Csc) {
   $Csc = $null
 }
 
+$Adb = gci "$env:ProgramFiles\WinGet\Packages\Genymobile.scrcpy_Microsoft.Winget.Source_8wekyb3d8bbwe\*\adb.exe" -ea silent | select -last 1
+if ($Adb) {
+  Set-Alias -Name adb -Value $Adb
+  $Adb = $null
+}
+
 if ((Test-Path "$env:UserProfile\.config\rg\config") -and (gcm rg -ea silent)) {
   $env:RIPGREP_CONFIG_PATH = "$env:UserProfile\.config\rg\config"
 }
