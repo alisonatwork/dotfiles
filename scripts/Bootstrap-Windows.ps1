@@ -22,6 +22,7 @@ winget install OpenVPNTechnologies.OpenVPN
 winget install PrestonN.FreeTube
 
 # media
+winget install calibre.calibre
 winget install clsid2.mpc-hc
 winget install dotPDNLLC.paintdotnet
 winget install MusicBee.MusicBee
