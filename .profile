@@ -67,6 +67,9 @@ else
 fi
 export TERM
 
+COLORTERM=truecolor
+export COLORTERM
+
 case "`uname -n 2> /dev/null`" in
 	sdf)
 		MAIL=/mail/${LOGNAME:?}
