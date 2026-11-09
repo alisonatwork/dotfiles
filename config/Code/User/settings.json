@@ -1,6 +1,7 @@
 {
     "editor.dragAndDrop": false,
     "editor.folding": false,
+    "editor.minimap.enabled": false,
     "editor.wordWrap": "wordWrapColumn",
     "editor.wordWrapColumn": 132,
     "editor.wrappingIndent": "none",
@@ -16,8 +17,11 @@
 
     "chat.disableAIFeatures": true,
 
-    "amVim.bindCtrlCommands": false,
+    "git.blame.editorDecoration.enabled": false,
+    "git.blame.statusBarItem.enabled": false,
     "git.enableStatusBarSync": false,
+
+    "amVim.bindCtrlCommands": false,
     "gitblame.ignoreWhitespace": true,
     "gitblame.statusBarMessageFormat": "${author.date} ${author.name} ${commit.summary,50}"
 }
