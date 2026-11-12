@@ -107,19 +107,19 @@ done
 cd config
 case "$uname" in
 	MINGW*|MSYS_NT*)
-		installRecursive Code "$APPDATA"
 		installRecursive Packages "$LOCALAPPDATA"
+		installRecursive VSCodium "$APPDATA"
 		installRecursive mintty "$APPDATA"
 		installRecursive nvim "$LOCALAPPDATA"
 		installRecursive rg "$HOME/.config"
 	;;
 	Darwin)
-		installRecursive Code "$HOME/Library/Application Support"
+		installRecursive VSCodium "$HOME/Library/Application Support"
 		installRecursive nvim "$HOME/.config"
 		installRecursive rg "$HOME/.config"
 	;;
 	*)
-		installRecursive Code "$HOME/.config"
+		installRecursive VSCodium "$HOME/.config"
 		installRecursive nvim "$HOME/.config"
 		installRecursive rg "$HOME/.config"
 	;;
