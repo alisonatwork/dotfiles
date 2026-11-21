@@ -13,3 +13,4 @@ ThemeDark=helmholtz
 ScrollMod=off
 NoAltScreen=yes
 CopyTab=yes
+KeyFunctions=C+Back:"[127;5u"

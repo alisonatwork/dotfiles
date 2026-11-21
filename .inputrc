@@ -1,0 +1,5 @@
+$include /etc/inputrc
+$if mode=emacs
+    "\e[3;5~": kill-word
+    "\e[127;5u": backward-kill-word
+$endif
