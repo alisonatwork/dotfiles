@@ -27,10 +27,17 @@ highlight! link StatusLine ModeMsg
 highlight! link StatusLineNC Normal
 
 set t_ti=
-set t_te=[0\ q
+set t_te=\<Esc>[0\ q
+if (!empty($WT_SESSION))
+  set keyprotocol=xterm:kitty
+endif
 
 autocmd BufNewFile,BufRead .shrc set filetype=sh
 autocmd FileType go,make,sh set noexpandtab
 autocmd FileType js,json set sw=2 ts=2
 
 map ` ~
+nmap <C-BS> db
+nmap <C-Del> dw
+imap <C-BS> <C-o>db
+imap <C-Del> <C-o>dw

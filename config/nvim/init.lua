@@ -37,14 +37,14 @@ vim.filetype.add({
 })
 
 vim.keymap.set('n', '`', '~')
+vim.keymap.set('n', '<C-BS>', 'db')
+vim.keymap.set('n', '<C-Del>', 'dw')
+vim.keymap.set('i', '<C-BS>', '<C-o>db')
+vim.keymap.set('i', '<C-Del>', '<C-o>dw')
 
 -- eclipse
 vim.keymap.set('n', '<C-r>', ':Pick files<CR>')
-if vim.fn.eval('&term') == 'ansi' then
-    vim.keymap.set('n', '<BS>', ':Pick grep_live<CR>')
-else
-    vim.keymap.set('n', '<C-h>', ':Pick grep_live<CR>')
-end
+vim.keymap.set('n', '<C-h>', ':Pick grep_live<CR>')
 
 -- intellij
 vim.keymap.set('n', '<C-a>', ':Pick help<CR>')
