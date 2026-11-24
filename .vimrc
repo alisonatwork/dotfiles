@@ -27,7 +27,7 @@ highlight! link StatusLine ModeMsg
 highlight! link StatusLineNC Normal
 
 set t_ti=
-set t_te=\<Esc>[0\ q
+set t_te=[0\ q
 if (!empty($WT_SESSION))
   set keyprotocol=xterm:kitty
 endif
